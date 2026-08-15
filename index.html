@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -102,6 +103,26 @@ a{color:inherit}
   .ni{padding:0 7px;letter-spacing:.12em}
   .ni.on .lbl{letter-spacing:.1em}
 }
+
+/* ──────────── SELECTOR DE IDIOMA · esquina superior derecha ──────────── */
+#langBox{position:relative;display:flex;align-items:stretch;border-left:1px solid rgba(255,255,255,.1)}
+#langBtn{display:flex;align-items:center;gap:7px;background:none;border:0;color:#c9c9c9;
+  font:700 11px 'Space Mono',monospace;letter-spacing:.14em;padding:0 14px;min-height:50px;
+  transition:color .25s,background .25s;white-space:nowrap}
+#langBtn:hover{color:#fff;background:rgba(255,255,255,.05)}
+#langBtn .lg-ico{font-size:13px;color:#ffd75e}
+#langBtn .lg-car{font-size:8px;color:#777}
+#langMenu{position:absolute;top:100%;right:0;min-width:208px;max-height:min(66vh,430px);overflow-y:auto;
+  background:rgba(10,10,10,.97);border:1px solid rgba(255,255,255,.16);border-top:none;
+  display:none;flex-direction:column;z-index:960;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+#langBox.open #langMenu{display:flex}
+.lg{display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;
+  color:#b9b9b9;font:12px 'Space Mono',monospace;letter-spacing:.06em;padding:11px 14px;text-align:left;
+  cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+.lg .lc{font-size:9px;letter-spacing:.18em;color:#6d6d6d}
+.lg:hover{background:rgba(255,255,255,.07);color:#fff}
+.lg.on{color:#ffd75e}
+.lg.on .lc{color:#ffd75e}
 
 /* flash de cambio de estación */
 #chan{position:fixed;inset:0;z-index:940;display:grid;place-items:center;background:#060606;
@@ -508,86 +529,86 @@ body.go .pg-cine .hero-sub span{transform:none}
 <section class="page pg-danza on" id="page-danza">
   <main class="wrap">
     <h1>
-      <span class="ml"><span style="--i:0"> Bailar los tiempos</span></span>
-      <span class="ml"><span style="--i:1">de <em>Tierra</em>.</span></span>
+      <span class="ml"><span style="--i:0" data-i18n="d.h1a"> Bailar los tiempos</span></span>
+      <span class="ml"><span style="--i:1" data-i18n-html="d.h1b">de <em>Tierra</em>.</span></span>
     </h1>
 
     <div class="marquee rv" aria-hidden="true"><div class="track">
-      <span>psoas ·</span><span>kinogea ·</span><span>gozo·</span><span>caer ·</span><span>traducir ·</span><span>escuchar ·</span>
-      <span>respirar ·</span><span>caer ·</span><span>sostener ·</span><span>turbulencias ·</span><span>caos ·</span><span>potencial ·</span>
-      <span>psoas ·</span><span>kinogea ·</span><span>gozo·</span><span>caer ·</span><span>traducir ·</span><span>escuchar ·</span>
-      <span>respirar ·</span><span>caer ·</span><span>sostener ·</span><span>turbulencias ·</span><span>caos ·</span><span>potencial ·</span>
+      <span data-i18n="mq.psoas">psoas ·</span><span data-i18n="mq.kinogea">kinogea ·</span><span data-i18n="mq.gozo">gozo·</span><span data-i18n="mq.caer">caer ·</span><span data-i18n="mq.traducir">traducir ·</span><span data-i18n="mq.escuchar">escuchar ·</span>
+      <span data-i18n="mq.respirar">respirar ·</span><span data-i18n="mq.caer">caer ·</span><span data-i18n="mq.sostener">sostener ·</span><span data-i18n="mq.turbulencias">turbulencias ·</span><span data-i18n="mq.caos">caos ·</span><span data-i18n="mq.potencial">potencial ·</span>
+      <span data-i18n="mq.psoas">psoas ·</span><span data-i18n="mq.kinogea">kinogea ·</span><span data-i18n="mq.gozo">gozo·</span><span data-i18n="mq.caer">caer ·</span><span data-i18n="mq.traducir">traducir ·</span><span data-i18n="mq.escuchar">escuchar ·</span>
+      <span data-i18n="mq.respirar">respirar ·</span><span data-i18n="mq.caer">caer ·</span><span data-i18n="mq.sostener">sostener ·</span><span data-i18n="mq.turbulencias">turbulencias ·</span><span data-i18n="mq.caos">caos ·</span><span data-i18n="mq.potencial">potencial ·</span>
     </div></div>
 
     <div class="dabke rv">
       <img src="img/danza/dabke-principal.jpg" alt="Danza comunitaria dabke al aire libre">
       <div class="dabke-cap">
         <p class="t">DABKE:</p>
-        <p>danza comunitaria que resiste la ocupación y el genocidio</p>
-        <p>dir. pazz </p>
-        <p>interpretes: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez y Pazz </p>
-        <p>10° encuentro nacional de danza MX</p>
-        <p>museo de arte moderno CDMX · 2025</p>
+        <p data-i18n="d.dabkeDesc">danza comunitaria que resiste la ocupación y el genocidio</p>
+        <p data-i18n="d.dabkeDir">dir. pazz </p>
+        <p data-i18n="d.dabkeInterp">interpretes: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez y Pazz </p>
+        <p data-i18n="d.dabkeEnc">10° encuentro nacional de danza MX</p>
+        <p data-i18n="d.dabkeVenue">museo de arte moderno CDMX · 2025</p>
       </div>
 
-      <div class="dabke-gal" role="group" aria-roledescription="carrusel" aria-label="Dabke — galería de 6 fotografías">
-        <div class="dabke-gal-head"><span>archivo dabke ✳ 6 fotografías</span><span>← desliza →</span></div>
+      <div class="dabke-gal" role="group" aria-roledescription="carrusel" aria-label="Dabke — galería de 6 fotografías" data-i18n-attr="aria-label:d.galAria|aria-roledescription:d.galRod">
+        <div class="dabke-gal-head"><span data-i18n="d.galHead1">archivo dabke ✳ 6 fotografías</span><span data-i18n="d.galHead2">← desliza →</span></div>
         <div class="dabke-gal-view" id="dabkeView" tabindex="0">
           <div class="dabke-gal-track" id="dabkeTrack">
             <figure class="dabke-slide">
               <img src="img/danza/dabke-01.jpg" alt="Dabke 01">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
             <figure class="dabke-slide">
               <img src="img/danza/dabke-02.jpg" alt="Dabke 02">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
             <figure class="dabke-slide">
               <img src="img/danza/dabke-03.jpg" alt="Dabke 03">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
             <figure class="dabke-slide">
               <img src="img/danza/dabke-04.jpg" alt="Dabke 04">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
             <figure class="dabke-slide">
               <img src="img/danza/dabke-05.jpg" alt="Dabke 05">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
             <figure class="dabke-slide">
               <img src="img/danza/dabke-06.jpg" alt="Dabke 06">
-              <figcaption>Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
+              <figcaption data-i18n="d.galCap">Fotografía - Emmma. F. Zaragoza Zarza</figcaption>
             </figure>
           </div>
-          <button class="dabke-arrow dabke-prev" id="dabkePrev" type="button" aria-label="Foto anterior">←</button>
-          <button class="dabke-arrow dabke-next" id="dabkeNext" type="button" aria-label="Foto siguiente">→</button>
+          <button class="dabke-arrow dabke-prev" id="dabkePrev" type="button" aria-label="Foto anterior" data-i18n-attr="aria-label:d.prev">←</button>
+          <button class="dabke-arrow dabke-next" id="dabkeNext" type="button" aria-label="Foto siguiente" data-i18n-attr="aria-label:d.next">→</button>
           <span class="dabke-count" id="dabkeCount">01 / 06</span>
         </div>
         <div class="dabke-dots" id="dabkeDots">
-          <button type="button" class="on" aria-label="Ir a la foto 1"></button>
-          <button type="button" aria-label="Ir a la foto 2"></button>
-          <button type="button" aria-label="Ir a la foto 3"></button>
-          <button type="button" aria-label="Ir a la foto 4"></button>
-          <button type="button" aria-label="Ir a la foto 5"></button>
-          <button type="button" aria-label="Ir a la foto 6"></button>
+          <button type="button" class="on" aria-label="Ir a la foto 1" data-i18n-label="d.dot" data-n="1"></button>
+          <button type="button" aria-label="Ir a la foto 2" data-i18n-label="d.dot" data-n="2"></button>
+          <button type="button" aria-label="Ir a la foto 3" data-i18n-label="d.dot" data-n="3"></button>
+          <button type="button" aria-label="Ir a la foto 4" data-i18n-label="d.dot" data-n="4"></button>
+          <button type="button" aria-label="Ir a la foto 5" data-i18n-label="d.dot" data-n="5"></button>
+          <button type="button" aria-label="Ir a la foto 6" data-i18n-label="d.dot" data-n="6"></button>
         </div>
       </div>
     </div>
 
     <div class="phrases">
-      <p class="sec-title" style="margin-top:0">bitácora digital — pulsa cada frase</p>
-      <div class="phrase rv"><button type="button"><span class="num">I</span><span class="t">Huella corporal</span><span class="arr">+</span></button><p class="txt"> El trabajo físico es lo que despatronaliza o repatronaliza los a priori del cuerpo.</p></div>
-      <div class="phrase rv"><button type="button"><span class="num">II</span><span class="t">Tipo de acercamiento físico o toque</span><span class="arr">+</span></button><p class="txt">De piel, despegar la carne del hueso y moldear el hueso.</p></div>
-      <div class="phrase rv"><button type="button"><span class="num">III</span><span class="t">Pensar con los pies</span><span class="arr">+</span></button><p class="txt">Ética al paso y al ritmo del mejor de los mundos flexibles.</p></div>
-      <div class="phrase rv"><button type="button"><span class="num">IV</span><span class="t">Coincidencia anatómica</span><span class="arr">+</span></button><p class="txt">La oreja coincide exactamente con la cresta iliaca.</p></div>
-      <div class="phrase rv"><button type="button"><span class="num">V</span><span class="t">Psoas</span><span class="arr">+</span></button><p class="txt">El psoas conecta toda la zona lumbar y se entrena de manera indirecta.</p></div>
-      <div class="phrase rv"><button type="button"><span class="num">VI</span><span class="t">Danzastre</span><span class="arr">+</span></button><p class="txt">Hacer sentir pensar.</p></div>
+      <p class="sec-title" style="margin-top:0" data-i18n="d.bitacora">bitácora digital — pulsa cada frase</p>
+      <div class="phrase rv"><button type="button"><span class="num">I</span><span class="t" data-i18n="d.ph1t">Huella corporal</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph1x"> El trabajo físico es lo que despatronaliza o repatroniza los a priori del cuerpo.</p></div>
+      <div class="phrase rv"><button type="button"><span class="num">II</span><span class="t" data-i18n="d.ph2t">Tipo de acercamiento físico o toque</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph2x">De piel, despegar la carne del hueso y moldear el hueso.</p></div>
+      <div class="phrase rv"><button type="button"><span class="num">III</span><span class="t" data-i18n="d.ph3t">Pensar con los pies</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph3x">Ética al paso y al ritmo del mejor de los mundos flexibles.</p></div>
+      <div class="phrase rv"><button type="button"><span class="num">IV</span><span class="t" data-i18n="d.ph4t">Coincidencia anatómica</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph4x">La oreja coincide exactamente con la cresta iliaca.</p></div>
+      <div class="phrase rv"><button type="button"><span class="num">V</span><span class="t" data-i18n="d.ph5t">Psoas</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph5x">El psoas conecta toda la zona lumbar y se entrena de manera indirecta.</p></div>
+      <div class="phrase rv"><button type="button"><span class="num">VI</span><span class="t" data-i18n="d.ph6t">Danzastre</span><span class="arr">+</span></button><p class="txt" data-i18n="d.ph6x">Hacer sentir pensar.</p></div>
     </div>
 
     <div class="danza-duo">
       <figure class="rv">
         <img src="img/danza/ensayo-01.jpg" alt="RUNA ensayo 01">
-        <figcaption>
+        <figcaption data-i18n-html="d.runa1">
           RUNA Dir. Jessica M. Castillo C.<br>
           Intérpretes Rooni - Pazz<br>
           Jardín Escénico 2026<br>
@@ -596,7 +617,7 @@ body.go .pg-cine .hero-sub span{transform:none}
       </figure>
       <figure class="rv" style="--i:1">
         <img src="img/danza/ensayo-02.jpg" alt="RUNA ensayo 02">
-        <figcaption>
+        <figcaption data-i18n-html="d.runa2">
           RUNA Dir. Jessica M. Castillo C.<br>
           Intérprete Pazz<br>
           Jardín Escénico 2026<br>
@@ -622,21 +643,21 @@ body.go .pg-cine .hero-sub span{transform:none}
 
   <div class="container">
     <header class="hd-foto">
-      <div class="name-stack" data-text="FOTOGRAFÍA">FOTOGRAFÍA</div>
+      <div class="name-stack" data-text="FOTOGRAFÍA" data-i18n="f.title">FOTOGRAFÍA</div>
     </header>
 
-    <p class="foto-cta">⟡ CLICK EN IMAGEN — GALERÍA EXPANDIDA ⟡</p>
+    <p class="foto-cta" data-i18n="f.cta">⟡ CLICK EN IMAGEN — GALERÍA EXPANDIDA ⟡</p>
 
     <div class="foto-list" id="fotoList"></div>
 
     <div id="lb">
-      <button class="lb-btn" id="lbClose" aria-label="cerrar">✕</button>
-      <button class="lb-btn" id="lbPrev" aria-label="anterior">◂</button>
+      <button class="lb-btn" id="lbClose" aria-label="cerrar" data-i18n-attr="aria-label:f.close">✕</button>
+      <button class="lb-btn" id="lbPrev" aria-label="anterior" data-i18n-attr="aria-label:f.prev">◂</button>
       <figure>
         <img id="lbImg" alt="" />
         <figcaption id="lbCap"></figcaption>
       </figure>
-      <button class="lb-btn" id="lbNext" aria-label="siguiente">▸</button>
+      <button class="lb-btn" id="lbNext" aria-label="siguiente" data-i18n-attr="aria-label:f.next">▸</button>
     </div>
   </div>
 </section>
@@ -645,23 +666,23 @@ body.go .pg-cine .hero-sub span{transform:none}
 <section class="page pg-cine" id="page-cine">
   <div id="grain" aria-hidden="true"></div>
 
-  <div id="leader" role="dialog" aria-label="Cuenta regresiva de proyección">
+  <div id="leader" role="dialog" aria-label="Cuenta regresiva de proyección" data-i18n-attr="aria-label:c.ldAria">
     <div class="lh"></div><div class="lv"></div>
     <div class="ring r1"></div><div class="ring r2"></div>
     <div class="sweep"></div>
-    <div class="ld-top">PAZZ FILMS PRESENTA</div>
+    <div class="ld-top" data-i18n="c.ldTop">PAZZ FILMS PRESENTA</div>
     <div id="ldNum">3</div>
-    <div class="ld-corner tl">PICTURE START</div>
-    <div class="ld-corner br">BOBINA 01 · 24 FPS</div>
-    <button id="ldSkip" type="button">SALTAR ⟶</button>
+    <div class="ld-corner tl" data-i18n="c.ldTl">PICTURE START</div>
+    <div class="ld-corner br" data-i18n="c.ldBr">BOBINA 01 · 24 FPS</div>
+    <button id="ldSkip" type="button" data-i18n="c.ldSkip">SALTAR ⟶</button>
   </div>
 
   <div id="peek" aria-hidden="true"><img alt=""></div>
 
   <main>
     <section class="hero" id="top">
-      <h1 id="heroTitle" data-manual>CINE</h1>
-      <p class="hero-sub"><span>productor &amp; director</span></p>
+      <h1 id="heroTitle" data-manual data-i18n="c.hero">CINE</h1>
+      <p class="hero-sub"><span data-i18n="c.heroSub">productor &amp; director</span></p>
       <p class="hero-meta rv">nopalli <b>✕</b> andrea santos <b>✕</b> silencio en llamas</p>
       <div class="cue">▼</div>
     </section>
@@ -669,9 +690,9 @@ body.go .pg-cine .hero-sub span{transform:none}
     <div class="marquee" id="mq1" aria-hidden="true"></div>
 
     <section class="wrap" id="programa" style="padding:12vh 0 6vh">
-      <div class="sec-head rv"><span class="n">§01</span><h2>PROGRAMA DE MANO</h2><span class="r">función continua</span></div>
+      <div class="sec-head rv"><span class="n">§01</span><h2 data-i18n="c.progTitle">PROGRAMA DE MANO</h2><span class="r" data-i18n="c.progR">función continua</span></div>
       <div id="progRows"></div>
-      <p class="prog-note rv">pasa el cursor para ver un fotograma · haz clic para entrar a la ficha</p>
+      <p class="prog-note rv" data-i18n="c.progNote">pasa el cursor para ver un fotograma · haz clic para entrar a la ficha</p>
     </section>
 
     <div id="obras"></div>
@@ -689,15 +710,15 @@ body.go .pg-cine .hero-sub span{transform:none}
 
     <div class="sem-sec" style="margin-top:26px">
       <div class="sem-txt">
-        <p class="rv"><b>Hijo de la Zarza que arde y de la Piedra que goza, hermano de la que es poderosa</b>, Pedro A. Zaragoza Zarza (pazz) nace en la Urorbe el <b>9 de noviembre de 1991</b>. Simbionte que se divierte con el tiempo del mundo, escritor de la generación del 19, músico autodidacta, cantor de penurias y celebraciones.</p>
-        <p class="rv" style="--i:1">Navegó entre la ciencia, la filosofía y la poesía en la <b>FFyL-UNAM</b>, donde también consolidó su carrera de actuación con la técnica del <b>actor red</b>. Se especializó en comprender el <span class="em">lenguaje de Tierra</span>, así como de la múltiple traducción a los diferentes reinos vía la Hamsa.</p>
-        <p class="rv" style="--i:2">Fundador del <b>sin-ismo, todoísmo</b> o también llamado <span class="em">todos los ismos</span> en el 2014. Guionista y director de cine por la <b>Escuela de Cine y Fotografía Pohualizcalli</b>. Cinefotógrafo en el programa de poesía y música experimental <b>Silencio en llamas</b>.</p>
-        <p class="rv" style="--i:3">Actualmente estudia la licenciatura de <b>Creación e Investigación Dancística</b> en el Centro de Investigación Coreográfica del INBAL.</p>
+        <p class="rv" data-i18n-html="s.p1"><b>Hijo de la Zarza que arde y de la Piedra que goza, hermano de la que es poderosa</b>, Pedro A. Zaragoza Zarza (pazz) nace en la Urorbe el <b>9 de noviembre de 1991</b>. Simbionte que se divierte con el tiempo del mundo, escritor de la generación del 19, músico autodidacta, cantor de penurias y celebraciones.</p>
+        <p class="rv" style="--i:1" data-i18n-html="s.p2">Navegó entre la ciencia, la filosofía y la poesía en la <b>FFyL-UNAM</b>, donde también consolidó su carrera de actuación con la técnica del <b>actor red</b>. Se especializó en comprender el <span class="em">lenguaje de Tierra</span>, así como de la múltiple traducción a los diferentes reinos vía la Hamsa.</p>
+        <p class="rv" style="--i:2" data-i18n-html="s.p3">Fundador del <b>sin-ismo, todoísmo</b> o también llamado <span class="em">todos los ismos</span> en el 2014. Guionista y director de cine por la <b>Escuela de Cine y Fotografía Pohualizcalli</b>. Cinefotógrafo en el programa de poesía y música experimental <b>Silencio en llamas</b>.</p>
+        <p class="rv" style="--i:3" data-i18n-html="s.p4">Actualmente estudia la licenciatura de <b>Creación e Investigación Dancística</b> en el Centro de Investigación Coreográfica del INBAL.</p>
       </div>
     </div>
 
     <div class="sem-sec">
-      <p class="sem-lab"><b>§</b> redes</p>
+      <p class="sem-lab"><b>§</b> <span data-i18n="s.redes">redes</span></p>
       <div class="sem-red">
         <a class="red rv" style="--ra:#25F4EE" href="https://www.tiktok.com/@pedrozaragozaz" target="_blank" rel="noopener"><span class="go">↗</span><span class="ic">♪</span><span class="nm">tiktok</span><span class="hd2">@pedrozaragozaz</span></a>
         <a class="red rv" style="--ra:#FF6EC7;--i:1" href="https://www.instagram.com/pedrozaragozaz" target="_blank" rel="noopener"><span class="go">↗</span><span class="ic">◉</span><span class="nm">instagram</span><span class="hd2">@pedrozaragozaz</span></a>
@@ -708,22 +729,28 @@ body.go .pg-cine .hero-sub span{transform:none}
     </div>
 
     <div class="sem-sec">
-      <p class="sem-lab"><b>§</b> contacto directo</p>
+      <p class="sem-lab"><b>§</b> <span data-i18n="s.contacto">contacto directo</span></p>
       <div class="sem-con">
-        <a class="crow rv" href="mailto:pedrozaragozaz@hotmail.com"><span class="cl">correo</span><span class="cv">pedrozaragozaz@hotmail.com</span><span class="go">↗</span></a>
+        <a class="crow rv" href="mailto:pedrozaragozaz@hotmail.com"><span class="cl" data-i18n="s.correo">correo</span><span class="cv">pedrozaragozaz@hotmail.com</span><span class="go">↗</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════ DOCK SUPERIOR · navegación unificada ════════════════ -->
-<nav id="dock" aria-label="danza principal">
+<!-- ════════════════ DOCK SUPERIOR · navegación unificada + idioma ════════════════ -->
+<nav id="dock" aria-label="navegación principal" data-i18n-attr="aria-label:nav.main">
   <div class="dk-items">
-    <button class="ni" style="--pc:#e8703a" data-go="danza" aria-label="ir a danza"><span class="n">01</span><span class="lbl">danza</span></button>
-    <button class="ni" style="--pc:#f2f2f2" data-go="kaleido" aria-label="ir a escritura"><span class="n">02</span><span class="lbl">escritura</span></button>
-    <button class="ni" style="--pc:#c4ff0e" data-go="foto" aria-label="ir a fotografía"><span class="n">03</span><span class="lbl">fotografía</span></button>
-    <button class="ni" style="--pc:#ffd75e" data-go="cine" aria-label="ir a cine"><span class="n">04</span><span class="lbl">cine</span></button>
-    <button class="ni" style="--pc:#ff7a3c" data-go="sem" aria-label="ir a semblanza"><span class="n">05</span><span class="lbl">semblanza</span></button>
+    <button class="ni" style="--pc:#e8703a" data-go="danza" aria-label="ir a danza" data-i18n-attr="aria-label:navA.danza"><span class="n">01</span><span class="lbl" data-i18n="nav.danza">danza</span></button>
+    <button class="ni" style="--pc:#f2f2f2" data-go="kaleido" aria-label="ir a escritura" data-i18n-attr="aria-label:navA.escritura"><span class="n">02</span><span class="lbl" data-i18n="nav.escritura">escritura</span></button>
+    <button class="ni" style="--pc:#c4ff0e" data-go="foto" aria-label="ir a fotografía" data-i18n-attr="aria-label:navA.fotografia"><span class="n">03</span><span class="lbl" data-i18n="nav.fotografia">fotografía</span></button>
+    <button class="ni" style="--pc:#ffd75e" data-go="cine" aria-label="ir a cine" data-i18n-attr="aria-label:navA.cine"><span class="n">04</span><span class="lbl" data-i18n="nav.cine">cine</span></button>
+    <button class="ni" style="--pc:#ff7a3c" data-go="sem" aria-label="ir a semblanza" data-i18n-attr="aria-label:navA.semblanza"><span class="n">05</span><span class="lbl" data-i18n="nav.semblanza">semblanza</span></button>
+  </div>
+  <div id="langBox">
+    <button id="langBtn" type="button" aria-haspopup="true" aria-label="Cambiar idioma">
+      <span class="lg-ico">✳</span><span id="langCur">ES</span><span class="lg-car">▼</span>
+    </button>
+    <div id="langMenu" role="listbox" aria-label="idiomas"></div>
   </div>
 </nav>
 <div id="chan" aria-hidden="true"><div class="cc"><span class="cnum" id="chanNum">01</span><span class="bar" id="chanBar"></span><span id="chanName">danza</span></div></div>
@@ -764,7 +791,7 @@ function updateDock(){
 function zap(){
   if(RM)return;
   var m=META[ACTIVE];
-  chanName.textContent=m.label;
+  chanName.textContent=(window.__pazzNavLbl?window.__pazzNavLbl(ACTIVE):m.label);
   chanNum.textContent=m.idx;
   chanBar.style.setProperty('--pc',NIS[ORDER.indexOf(ACTIVE)].style.getPropertyValue('--pc'));
   chan.classList.remove('zap');void chan.offsetWidth;chan.classList.add('zap');
@@ -784,7 +811,7 @@ function goTo(name,opts){
   el.classList.add('on');
   el.scrollTop=0;
   document.body.classList.add('view-'+name);
-  document.title=META[name].title;
+  if(window.__pazzTitle){window.__pazzTitle();}else{document.title=META[name].title;}
   updateDock();zap();
   if(name==='danza'&&!seen.danza){seen.danza=true;if(window.__danzaEnter)window.__danzaEnter();}
   if(name==='cine'&&!seen.cine){seen.cine=true;if(window.__cineStart)window.__cineStart();}
@@ -814,7 +841,7 @@ window.addEventListener('hashchange',function(){
 
 var init=fromHash();
 if(init&&init!=='danza'){goTo(init,{hash:false});}
-else{updateDock();setHash('danza');document.title=META.danza.title;}
+else{updateDock();setHash('danza');if(window.__pazzTitle){window.__pazzTitle();}else{document.title=META.danza.title;}}
 })();
 </script>
 
@@ -1013,9 +1040,10 @@ function cursorHoverOn(c){if(window.__pazzActive==='foto')cursor.classList.add(c
 function cursorHoverOff(c){cursor.classList.remove(c);}
 
 FOTO.forEach((f,i)=>{
+  const k='f.c'+(i+1);
   const fig=document.createElement("figure");
   fig.className="foto-item";
-  fig.innerHTML=`<img src="${f.u}" alt="${f.c}" loading="lazy"><span class="cap">${f.c}</span>`;
+  fig.innerHTML=`<img src="${f.u}" alt="${f.c}" loading="lazy" data-i18n-alt="${k}"><span class="cap" data-i18n="${k}">${f.c}</span>`;
   fig.addEventListener("click",()=>openLightbox(i));
   fig.addEventListener("mouseenter",()=>cursorHoverOn("hover-img"));
   fig.addEventListener("mouseleave",()=>cursorHoverOff("hover-img"));
@@ -1027,12 +1055,18 @@ const lb=document.getElementById("lb");
 const lbImg=document.getElementById("lbImg");
 const lbCap=document.getElementById("lbCap");
 
+function capFor(i){
+  const k='f.c'+(i+1);
+  const v=(window.__pazzTR?window.__pazzTR(k):null);
+  return v||FOTO[i].c;
+}
 function openLightbox(index){currentIndex=index;renderLightbox();lb.classList.add("on");}
 function renderLightbox(){
   const item=FOTO[currentIndex];
-  lbImg.src=item.u;lbImg.alt=item.c;
-  lbCap.textContent=`${item.c}  [${currentIndex+1}/${FOTO.length}]`;
+  lbImg.src=item.u;lbImg.alt=capFor(currentIndex);
+  lbCap.textContent=`${capFor(currentIndex)}  [${currentIndex+1}/${FOTO.length}]`;
 }
+window.__fotoLang=function(){ if(lb.classList.contains('on')) renderLightbox(); };
 function closeLightbox(){lb.classList.remove("on");}
 function nextImage(){currentIndex=(currentIndex+1)%FOTO.length;renderLightbox();}
 function prevImage(){currentIndex=(currentIndex-1+FOTO.length)%FOTO.length;renderLightbox();}
@@ -1180,7 +1214,7 @@ var OBRAS=[
     b.type="button";b.className="prog-row";b.style.setProperty("--acc",o.acc);
     b.dataset.peek=o.stills[0].src;b.dataset.target=o.id;
     b.innerHTML='<span class="num">'+o.rom+'</span><span class="t">'+o.titulo+'</span><span class="y">'+o.anio+'</span>'
-      +'<span class="m">'+(o.progM||(o.genero+' · '+o.formato+' · '+o.dur+' · '+(o.rolMeta||o.rol)))+'</span>';
+      +'<span class="m" data-i18n="'+o.id+'.progM">'+(o.progM||(o.genero+' · '+o.formato+' · '+o.dur+' · '+(o.rolMeta||o.rol)))+'</span>';
     b.addEventListener("click",function(){
       var tgt=document.getElementById(o.id);
       if(tgt)tgt.scrollIntoView({behavior:RM?"auto":"smooth"});
@@ -1194,34 +1228,34 @@ var OBRAS=[
   OBRAS.forEach(function(o,i){
     var sec=document.createElement("section");
     sec.className="obra";sec.id=o.id;sec.style.setProperty("--acc",o.acc);
-    var specsHTML=(o.specs||[]).map(function(s){
+    var specsHTML=(o.specs||[]).map(function(s,si){
       var cls=s.hl?' class="spec-hl"':'';
-      return '<dt'+cls+'>'+s.k+'</dt><dd'+cls+'>'+s.v+'</dd>';
+      return '<dt'+cls+' data-i18n="'+o.id+'.k'+(si+1)+'">'+s.k+'</dt><dd'+cls+' data-i18n="'+o.id+'.v'+(si+1)+'">'+s.v+'</dd>';
     }).join("");
     var linksHTML=(o.links||[]).map(function(l){
       return '<a class="lnk" target="_blank" rel="noopener" href="'+l.u+'">'+l.t+' <span class="arr">↗</span></a>';
     }).join("")
-    +'<a class="lnk" target="_blank" rel="noopener" href="'+o.yt+'">youtube · ver obra <span class="arr">↗</span></a>';
+    +'<a class="lnk" target="_blank" rel="noopener" href="'+o.yt+'"><span data-i18n="c.verObra">youtube · ver obra</span> <span class="arr">↗</span></a>';
     sec.innerHTML=
-      '<div class="wrap"><div class="obra-tag rv">ficha <b>'+o.ficha+'</b> · bobina <b>'+o.rom+'</b> · '+o.anio+'</div>'
+      '<div class="wrap"><div class="obra-tag rv"><span data-i18n="c.ficha">ficha</span> <b>'+o.ficha+'</b> · <span data-i18n="c.bobina">bobina</span> <b>'+o.rom+'</b> · '+o.anio+'</div>'
       +'<div class="obra-grid">'
       +'<aside class="obra-info"><div class="rom rv">'+o.rom+'</div>'
       +'<h2 class="obra-titulo" data-scramble>'+o.titulo+'</h2>'
-      +'<p class="obra-anio">'+o.anio+' · '+o.genero.toLowerCase()+'</p>'
-      +'<p class="obra-rol">☞ '+o.rol+'</p>'
-      +'<p class="sinopsis serif rv">'+o.sinopsis+'</p>'
+      +'<p class="obra-anio" data-i18n="'+o.id+'.anio">'+o.anio+' · '+o.genero.toLowerCase()+'</p>'
+      +'<p class="obra-rol">☞ <span data-i18n="'+o.id+'.rol">'+o.rol+'</span></p>'
+      +'<p class="sinopsis serif rv" data-i18n="'+o.id+'.sin">'+o.sinopsis+'</p>'
       +(o.extra||'')
       +'<dl class="specs rv">'+specsHTML+'</dl>'
       +'<div class="links rv">'+linksHTML+'</div></aside>'
       +'<div class="obra-media">'
-      +'<div class="sala rv"><div class="sala-head"><span><b>VIDEO</b> · CANAL DE YOUTUBE</span><span>disponible ahora</span></div>'
+      +'<div class="sala rv"><div class="sala-head"><span><b data-i18n="c.salaVideo">VIDEO</b> · <span data-i18n="c.salaCanal">CANAL DE YOUTUBE</span></span><span data-i18n="c.salaOk">disponible ahora</span></div>'
       +'<div id="video-'+o.id+'"></div></div>'
-      +'<div class="rv"><div class="sala-head" style="margin-top:26px"><span>STILLS · FOTOGRAMAS</span><span>0'+o.stills.length+' cuadros</span></div>'
+      +'<div class="rv"><div class="sala-head" style="margin-top:26px"><span data-i18n="c.stillsTitle">STILLS · FOTOGRAMAS</span><span>0'+o.stills.length+' <span data-i18n="c.cuadros">cuadros</span></span></div>'
       +'<div class="stills-strip" id="strip-'+o.id+'"></div></div>'
       +'</div></div></div>';
     cont.appendChild(sec);
     if(i<OBRAS.length-1){
-      var c=document.createElement("div");c.className="corte";
+      var c=document.createElement("div");c.className="corte";c.setAttribute("data-i18n","c.corte");
       c.textContent="· cambio de bobina ·";cont.appendChild(c);
     }
   });
@@ -1240,15 +1274,15 @@ function crearVideo(o){
   var strip=document.getElementById("strip-"+o.id);
   if(!mount||!strip)return;
   mount.innerHTML=
-    '<a class="yt-card" href="'+o.yt+'" target="_blank" rel="noopener" aria-label="Ver '+o.titulo+' en YouTube">'
+    '<a class="yt-card" href="'+o.yt+'" target="_blank" rel="noopener" data-t="'+o.titulo+'" aria-label="Ver '+o.titulo+' en YouTube">'
     +'<span class="yt-frame">'
-    +'<img src="'+o.stills[0].src+'" alt="Fotograma de '+o.titulo+'">'
+    +'<img src="'+o.stills[0].src+'" alt="Fotograma de '+o.titulo+'" data-t="'+o.titulo+'">'
     +'<span class="yt-play">▶</span>'
     +'</span>'
-    +'<span class="yt-tag"><span><b>ver en youtube</b> ↗</span><span>'+o.titulo+' · '+o.anio+'</span></span>'
+    +'<span class="yt-tag"><span><b data-i18n="c.verYt">ver en youtube</b> ↗</span><span>'+o.titulo+' · '+o.anio+'</span></span>'
     +'</a>';
-  strip.innerHTML=o.stills.map(function(s){
-    return '<figure class="st-frame"><img loading="lazy" src="'+s.src+'" alt="'+o.titulo+' — '+s.cap+'"><span class="cap">'+s.cap+'</span></figure>';
+  strip.innerHTML=o.stills.map(function(s,si){
+    return '<figure class="st-frame"><img loading="lazy" src="'+s.src+'" alt="'+o.titulo+' — '+s.cap+'" data-t="'+o.titulo+'" data-capkey="'+o.id+'.st'+(si+1)+'"><span class="cap" data-i18n="'+o.id+'.st'+(si+1)+'">'+s.cap+'</span></figure>';
   }).join("");
 }
 OBRAS.forEach(crearVideo);
@@ -1426,5 +1460,749 @@ window.__semEnter=function(){
 if(window.__pazzActive==='sem')window.__semEnter();
 })();
 </script>
+
+<script>
+/* ════════════════ TRADUCCIÓN DEL SISTEMA · 10 idiomas ════════════════
+   Selector: esquina superior derecha (dock). Cubre todas las páginas. */
+(function(){
+"use strict";
+var LANGS=[
+["es","Español","ES"],["ru","Русский","RU"],["en","English","EN"],["zh","中文","ZH"],["ar","العربية","AR"],
+["fa","فارسی","FA"],["fr","Français","FR"],["de","Deutsch","DE"],["ja","日本語","JA"],["pt","Português","PT"],["it","Italiano","IT"]
+];
+
+var TPL={
+es:{dot:"Ir a la foto {n}",fotograma:"Fotograma de {t}",verEn:"Ver {t} en YouTube"},
+ru:{dot:"К фотографии {n}",fotograma:"Кадр из {t}",verEn:"Смотреть {t} на YouTube"},
+en:{dot:"Go to photo {n}",fotograma:"Frame from {t}",verEn:"Watch {t} on YouTube"},
+zh:{dot:"转到第 {n} 张",fotograma:"{t} 的剧照",verEn:"在 YouTube 观看 {t}"},
+ar:{dot:"إلى الصورة {n}",fotograma:"إطار من {t}",verEn:"مشاهدة {t} على YouTube"},
+fa:{dot:"به عکس {n}",fotograma:"فریمی از {t}",verEn:"تماشای {t} در YouTube"},
+fr:{dot:"Aller à la photo {n}",fotograma:"Photogramme de {t}",verEn:"Voir {t} sur YouTube"},
+de:{dot:"Zu Foto {n}",fotograma:"Filmbild aus {t}",verEn:"{t} auf YouTube ansehen"},
+ja:{dot:"写真 {n} へ",fotograma:"{t} のワンシーン",verEn:"YouTube で {t} を観る"},
+pt:{dot:"Ir para a foto {n}",fotograma:"Fotograma de {t}",verEn:"Ver {t} no YouTube"},
+it:{dot:"Vai alla foto {n}",fotograma:"Fotogramma di {t}",verEn:"Guarda {t} su YouTube"}
+};
+
+var DICT={
+
+/* ── РУССКИЙ ─────────────────────────────────────── */
+ru:{
+"nav.danza":"танец","nav.escritura":"письмо","nav.fotografia":"фотография","nav.cine":"кино","nav.semblanza":"биография",
+"navA.danza":"перейти к танцу","navA.escritura":"перейти к письму","navA.fotografia":"перейти к фотографии","navA.cine":"перейти к кино","navA.semblanza":"перейти к биографии","nav.main":"основная навигация",
+"d.h1a":" Танцевать времена","d.h1b":"<em>Земли</em>.",
+"mq.psoas":"псоас","mq.gozo":"радость","mq.caer":"падать","mq.traducir":"переводить","mq.escuchar":"слушать","mq.respirar":"дышать","mq.sostener":"удерживать","mq.turbulencias":"турбулентности","mq.caos":"хаос","mq.potencial":"потенциал",
+"d.dabkeDesc":"общинный танец, сопротивляющийся оккупации и геноциду",
+"d.dabkeDir":"реж. pazz",
+"d.dabkeInterp":"исполнители: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez и Pazz",
+"d.dabkeEnc":"10-я национальная встреча танца MX",
+"d.dabkeVenue":"Музей современного искусства CDMX · 2025",
+"d.galHead1":"архив дабке ✳ 6 фотографий","d.galHead2":"← листайте →",
+"d.galAria":"Дабке — галерея из 6 фотографий","d.galRod":"карусель",
+"d.prev":"Предыдущее фото","d.next":"Следующее фото",
+"d.bitacora":"цифровой дневник — нажмите на каждую фразу",
+"d.ph1t":"Отпечаток тела","d.ph1x":"Физическая работа — это то, что распаттернивает или репаттернивает априори тела.",
+"d.ph2t":"Тип физического приближения или прикосновения","d.ph2x":"Кожей: отделить плоть от кости и вылепить кость.",
+"d.ph3t":"Мыслить ногами","d.ph3x":"Этика в шаге и в ритме лучшего из гибких миров.",
+"d.ph4t":"Анатомическое совпадение","d.ph4x":"Ухо точно совпадает с гребнем подвздошной кости.",
+"d.ph5t":"Псоас","d.ph5x":"Псоас соединяет всю поясничную зону и тренируется косвенно.",
+"d.ph6t":"Danzastre","d.ph6x":"Заставить чувствовать и мыслить.",
+"d.runa1":"RUNA Реж. Jessica M. Castillo C.<br>Исполнители Rooni - Pazz<br>Jardín Escénico 2026<br>Фото Fátima Ramírez Corona",
+"d.runa2":"RUNA Реж. Jessica M. Castillo C.<br>Исполнитель Pazz<br>Jardín Escénico 2026<br>Фото Fátima Ramírez Corona",
+"f.title":"ФОТОГРАФИЯ","f.cta":"⟡ НАЖМИТЕ НА ИЗОБРАЖЕНИЕ — РАСШИРЕННАЯ ГАЛЕРЕЯ ⟡",
+"f.c1":"облако птиц реж. Mario Mendieta","f.c2":"Samantha Leff и Renata Iberia","f.c3":"Аэродинамический Tralalero, или Arturo Elías Ayub","f.c4":"ánimas реж. Arely Reyes","f.c6":"Дождь сока","f.c7":"Salvador Gallardo, или О Современном № 3",
+"f.close":"закрыть","f.prev":"назад","f.next":"вперёд",
+"c.ldTop":"PAZZ FILMS ПРЕДСТАВЛЯЕТ","c.ldTl":"НАЧАЛО ФИЛЬМА","c.ldBr":"БОБИНА 01 · 24 FPS","c.ldSkip":"ПРОПУСТИТЬ ⟶","c.ldAria":"Отсчёт перед показом",
+"c.hero":"КИНО","c.heroSub":"продюсер и режиссёр",
+"c.progTitle":"ПРОГРАММКА","c.progR":"непрерывный сеанс","c.progNote":"наведите курсор, чтобы увидеть кадр · нажмите, чтобы открыть карточку фильма",
+"c.ficha":"карточка","c.bobina":"бобина",
+"c.salaVideo":"ВИДЕО","c.salaCanal":"КАНАЛ YOUTUBE","c.salaOk":"доступно сейчас",
+"c.stillsTitle":"КАДРЫ · ФОТОГРАММЫ","c.cuadros":"кадров",
+"c.verObra":"youtube · смотреть работу","c.verYt":"смотреть на youtube",
+"c.corte":"· смена бобины ·",
+"nopalli.anio":"2025 · документальный видео-данс",
+"nopalli.rol":"Автор · постановка, сценарий и fx",
+"nopalli.progM":"Документальный видео-данс · 02:56 · Автор · СЦЕНАРИЙ и FX",
+"nopalli.sin":"Использование нопала менялось на протяжении истории Мексики. Из пищи он в одно мгновение превратился в национальный символ. Теперь серия новых модификаций приведет его в неожиданные места.",
+"nopalli.k1":"название","nopalli.k2":"жанр","nopalli.v2":"Документальный видео-данс","nopalli.k3":"продолжительность","nopalli.k4":"язык","nopalli.v4":"испанский","nopalli.k5":"страна","nopalli.v5":"Мексика","nopalli.k6":"место съёмок","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa и Cuauhtémoc","nopalli.k7":"автор","nopalli.k8":"продакшн","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres и Pedro A. Zaragoza Zarza","nopalli.k9":"сценарий","nopalli.k10":"спецэффекты","nopalli.k11":"в ролях",
+"nopalli.st1":"STILL 01 — коса","nopalli.st2":"STILL 02 — организация","nopalli.st3":"STILL 03 — нопал и опунции",
+"andrea.anio":"2024 · портретный документальный",
+"andrea.rol":"Документальный сценарий, режиссура и монтаж",
+"andrea.progM":"Документальный · 20:19 · Документальный сценарий, режиссура и монтаж",
+"andrea.sin":"Андреа Сантос Вальдес получила диплом юриста на юридическом факультете UNAM с отличием. Имеет две магистратуры: одну в Ибероамериканском университете (полная стипендия), другую в Школе судебной власти (диссертация с отличием). Рождённая среди социальных движений SME и Айоцинапы, она перенесла свою борьбу в судебную систему, а именно — в кандидатуру на пост МАГИСТРА Трибунала судебной дисциплины CDMX. Здесь мы делимся частью её жизни, стремлениями и причиной, по которой она выдвинулась в судьи, несмотря на множество противоречий вокруг судебной реформы.",
+"andrea.k1":"жанр","andrea.v1":"Портретный документальный","andrea.k2":"документальный сценарий и режиссура","andrea.k3":"оператор-постановщик","andrea.k4":"прямой звук и оригинальная музыка","andrea.k5":"монтаж",
+"andrea.st1":"STILL 01 — дом","andrea.st2":"STILL 02 — транспорт","andrea.st3":"STILL 03 — улица",
+"nicolasjaar.anio":"2024 · сессия поэзии и экспериментальной музыки",
+"nicolasjaar.rol":"Оператор-постановщик и видеомонтаж",
+"nicolasjaar.progM":"Сессия поэзии и экспериментальной музыки · 1 Ч · Оператор-постановщик и видеомонтаж",
+"nicolasjaar.sin":"В этой сессии музыкант и писатель Николас Хаар присоединяется к нам, чтобы разделить глубокий диалог об измерениях тишины, насилии стен и возможности иных миров, а также мощную звуковую импровизацию, которая заставляет задуматься о нашем месте в мире, нашей способности действовать и возможности обличать жестокость современности — напоминая, что борьба Палестины — это борьба за достойную жизнь.",
+"nicolasjaar.k1":"режиссура и ведение","nicolasjaar.k2":"продакшн","nicolasjaar.k3":"продакшн звука","nicolasjaar.k4":"оператор-постановщик и видеомонтаж","nicolasjaar.k5":"оператор камеры","nicolasjaar.k6":"фото со съёмок",
+"nicolasjaar.st1":"STILL 01 — звуковая импровизация","nicolasjaar.st2":"STILL 02 — диалог и слушание",
+"s.p1":"<b>Сын Горящего Терновника и Радующегося Камня, брат той, что могущественна</b>, Педро А. Сарагоса Сарса (pazz) рождается в Урорбе <b>9 ноября 1991 года</b>. Симбионт, развлекающийся всем временем мира, писатель поколения 19, музыкант-самоучка, певец тягот и празднеств.",
+"s.p2":"Он странствовал между наукой, философией и поэзией в <b>FFyL-UNAM</b>, где также укрепил свою актёрскую карьеру с техникой <b>actor red</b>. Специализировался на понимании <span class=\"em\">языка Земли</span>, а также множественного перевода на разные царства через Хамсу.",
+"s.p3":"Основатель <b>син-изма, тодо-изма</b>, также называемого <span class=\"em\">все измы</span>, в 2014 году. Сценарист и кинорежиссёр из <b>Школы кино и фотографии Pohualizcalli</b>. Кинооператор программы поэзии и экспериментальной музыки <b>Silencio en llamas</b>.",
+"s.p4":"В настоящее время учится на бакалавриате <b>Хореографического творчества и исследования</b> в Центре хореографических исследований INBAL.",
+"s.redes":"сети","s.contacto":"прямой контакт","s.correo":"почта","l.btn":"Сменить язык"
+},
+
+/* ── ENGLISH ─────────────────────────────────────── */
+en:{
+"nav.danza":"dance","nav.escritura":"writing","nav.fotografia":"photography","nav.cine":"film","nav.semblanza":"bio",
+"navA.danza":"go to dance","navA.escritura":"go to writing","navA.fotografia":"go to photography","navA.cine":"go to film","navA.semblanza":"go to bio","nav.main":"main navigation",
+"d.h1a":" Dancing the times","d.h1b":"of <em>Earth</em>.",
+"mq.gozo":"joy","mq.caer":"fall","mq.traducir":"translate","mq.escuchar":"listen","mq.respirar":"breathe","mq.sostener":"sustain","mq.turbulencias":"turbulences","mq.caos":"chaos","mq.potencial":"potential",
+"d.dabkeDesc":"community dance that resists occupation and genocide",
+"d.dabkeDir":"dir. pazz",
+"d.dabkeInterp":"performers: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez and Pazz",
+"d.dabkeEnc":"10th National Dance Gathering MX",
+"d.dabkeVenue":"Museum of Modern Art CDMX · 2025",
+"d.galHead1":"dabke archive ✳ 6 photographs","d.galHead2":"← swipe →",
+"d.galAria":"Dabke — gallery of 6 photographs","d.galRod":"carousel",
+"d.prev":"Previous photo","d.next":"Next photo",
+"d.bitacora":"digital logbook — tap each phrase",
+"d.ph1t":"Body imprint","d.ph1x":"Physical work is what depatterns or repatterns the a priori of the body.",
+"d.ph2t":"Type of physical approach or touch","d.ph2x":"Of skin: detach the flesh from the bone and shape the bone.",
+"d.ph3t":"Thinking with the feet","d.ph3x":"Ethics in step and rhythm of the best of flexible worlds.",
+"d.ph4t":"Anatomical coincidence","d.ph4x":"The ear coincides exactly with the iliac crest.",
+"d.ph5x":"The psoas connects the whole lumbar region and is trained indirectly.",
+"d.ph6t":"Danzastre","d.ph6x":"Making feel think.",
+"d.runa1":"RUNA Dir. Jessica M. Castillo C.<br>Performers Rooni - Pazz<br>Jardín Escénico 2026<br>Photography Fátima Ramírez Corona",
+"d.runa2":"RUNA Dir. Jessica M. Castillo C.<br>Performer Pazz<br>Jardín Escénico 2026<br>Photography Fátima Ramírez Corona",
+"f.title":"PHOTOGRAPHY","f.cta":"⟡ CLICK ON IMAGE — EXPANDED GALLERY ⟡",
+"f.c1":"cloud of birds dir. Mario Mendieta","f.c2":"Samantha Leff and Renata Iberia","f.c3":"Aerodynamic Tralalero or Arturo Elías Ayub","f.c6":"Sap rain","f.c7":"Salvador Gallardo or of the Current no. 3",
+"f.close":"close","f.prev":"previous","f.next":"next",
+"c.ldTop":"PAZZ FILMS PRESENTS","c.ldBr":"REEL 01 · 24 FPS","c.ldSkip":"SKIP ⟶","c.ldAria":"Screening countdown",
+"c.hero":"FILM","c.heroSub":"producer & director",
+"c.progTitle":"PROGRAM NOTES","c.progR":"continuous screening","c.progNote":"hover to see a still frame · click to enter the film card",
+"c.ficha":"card","c.bobina":"reel",
+"c.salaVideo":"VIDEO","c.salaCanal":"YOUTUBE CHANNEL","c.salaOk":"available now",
+"c.stillsTitle":"STILLS · FRAMES","c.cuadros":"frames",
+"c.verObra":"youtube · watch the work","c.verYt":"watch on youtube",
+"c.corte":"· reel change ·",
+"nopalli.anio":"2025 · documentary videodance",
+"nopalli.rol":"Filmmaker · direction, script & fx",
+"nopalli.progM":"Documentary videodance · 02:56 · Filmmaker · SCRIPT and FX",
+"nopalli.sin":"The use of nopal has changed throughout Mexican history. From food it became a national symbol in an instant. Now, a series of new modifications will take it to unsuspected places.",
+"nopalli.k1":"title","nopalli.k2":"genre","nopalli.v2":"Documentary videodance","nopalli.k3":"duration","nopalli.k4":"language","nopalli.v4":"Spanish","nopalli.k5":"country","nopalli.v5":"Mexico","nopalli.k6":"filming locations","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa and Cuauhtémoc","nopalli.k7":"filmmaker","nopalli.k8":"production","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres and Pedro A. Zaragoza Zarza","nopalli.k9":"script","nopalli.k10":"special effects","nopalli.k11":"cast",
+"nopalli.st1":"STILL 01 — scythe","nopalli.st2":"STILL 02 — organizing","nopalli.st3":"STILL 03 — nopal and prickly pears",
+"andrea.anio":"2024 · portrait documentary",
+"andrea.rol":"Documentary script, direction & editing",
+"andrea.progM":"Documentary · 20:19 · Documentary Script, Direction and Editing",
+"andrea.sin":"Andrea Santos Valdes holds a Law degree from the UNAM Law School, where she graduated with honors. She holds two master's degrees, one from Universidad Iberoamericana (fully scholarship-funded) and another from the Escuela Judicial (thesis with honors). Born amid the SME and Ayotzinapa social movements, she has now moved her struggle into the Judiciary, specifically her candidacy for MAGISTRATE of the Judicial Discipline Tribunal of CDMX. Here we share a bit of her life, her aspirations and why she ran to become a judge, despite the many contradictions surrounding judicial reform.",
+"andrea.k1":"genre","andrea.v1":"Portrait documentary","andrea.k2":"documentary script and direction","andrea.k3":"dir. of photography","andrea.k4":"live sound and original music","andrea.k5":"editing",
+"andrea.st1":"STILL 01 — home","andrea.st2":"STILL 02 — transit","andrea.st3":"STILL 03 — street",
+"nicolasjaar.anio":"2024 · poetry and experimental music session",
+"nicolasjaar.rol":"Cinematography & video editing",
+"nicolasjaar.progM":"Poetry and experimental music session · 1 H · Dir. of Photography and video editing",
+"nicolasjaar.sin":"In this session, musician and writer Nicolás Jaar joins us for a deep dialogue on the dimensions of silence, the violence of walls and the possibility of other worlds, along with a powerful sound improvisation that leads us to reflect on our place in the world, our power to act and our capacity to denounce the brutality of modernity — reminding us that the Palestinian struggle is the struggle for a dignified life.",
+"nicolasjaar.k1":"direction and hosting","nicolasjaar.k2":"production","nicolasjaar.k3":"audio production","nicolasjaar.k4":"cinematography and video editing","nicolasjaar.k5":"camera operator","nicolasjaar.k6":"still photography",
+"nicolasjaar.st1":"STILL 01 — sonic improvisation","nicolasjaar.st2":"STILL 02 — dialogue and listening",
+"s.p1":"<b>Son of the Burning Bramble and the Rejoicing Stone, brother of the powerful one</b>, Pedro A. Zaragoza Zarza (pazz) is born in the Urorbe on <b>November 9, 1991</b>. Symbiont who amuses himself with all the time in the world, writer of the generation of 19, self-taught musician, singer of hardships and celebrations.",
+"s.p2":"He navigated among science, philosophy and poetry at <b>FFyL-UNAM</b>, where he also consolidated his acting career with the <b>actor red</b> technique. He specialized in understanding the <span class=\"em\">language of Earth</span>, as well as the multiple translation to the different realms via the Hamsa.",
+"s.p3":"Founder of <b>sin-ism, todo-ism</b>, also called <span class=\"em\">all the isms</span>, in 2014. Screenwriter and film director out of the <b>Pohualizcalli School of Cinema and Photography</b>. Cinematographer on the poetry and experimental music program <b>Silencio en llamas</b>.",
+"s.p4":"He is currently pursuing a bachelor's degree in <b>Dance Creation and Research</b> at the Choreographic Research Center of INBAL.",
+"s.redes":"networks","s.contacto":"direct contact","s.correo":"email","l.btn":"Change language"
+},
+
+/* ── 中文 ────────────────────────────────────────── */
+zh:{
+"nav.danza":"舞蹈","nav.escritura":"写作","nav.fotografia":"摄影","nav.cine":"电影","nav.semblanza":"简介",
+"navA.danza":"前往舞蹈","navA.escritura":"前往写作","navA.fotografia":"前往摄影","navA.cine":"前往电影","navA.semblanza":"前往简介","nav.main":"主导航",
+"d.h1a":"舞动时光","d.h1b":"属于<em>大地</em>。",
+"mq.psoas":"腰肌","mq.gozo":"喜悦","mq.caer":"坠落","mq.traducir":"翻译","mq.escuchar":"倾听","mq.respirar":"呼吸","mq.sostener":"承托","mq.turbulencias":"湍流","mq.caos":"混沌","mq.potencial":"潜能",
+"d.dabkeDesc":"抵抗占领与种族灭绝的集体舞蹈",
+"d.dabkeDir":"导演 pazz",
+"d.dabkeInterp":"舞者：Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez 与 Pazz",
+"d.dabkeEnc":"第十届全国舞蹈交流 MX",
+"d.dabkeVenue":"现代艺术博物馆 CDMX · 2025",
+"d.galHead1":"达布克档案 ✳ 6 张照片","d.galHead2":"← 滑动 →",
+"d.galAria":"Dabke — 6 张照片画廊","d.galRod":"轮播",
+"d.prev":"上一张照片","d.next":"下一张照片",
+"d.bitacora":"数字日志 — 点击每个句子",
+"d.ph1t":"身体的印记","d.ph1x":"身体训练能解除或重建身体固有的先验模式。",
+"d.ph2t":"身体接近或触碰的方式","d.ph2x":"以皮肤为介：将肉从骨上剥离，再塑造骨头。",
+"d.ph3t":"用双脚思考","d.ph3x":"在最好的柔性世界中，合其步伐与节奏的伦理。",
+"d.ph4t":"解剖学的巧合","d.ph4x":"耳朵与髂嵴完全对齐。",
+"d.ph5t":"大腰筋","d.ph5x":"腰肌连接整个腰部，并以间接方式训练。",
+"d.ph6t":"Danzastre","d.ph6x":"让感受去思考。",
+"d.runa1":"RUNA 导演 Jessica M. Castillo C.<br>舞者 Rooni - Pazz<br>Jardín Escénico 2026<br>摄影 Fátima Ramírez Corona",
+"d.runa2":"RUNA 导演 Jessica M. Castillo C.<br>舞者 Pazz<br>Jardín Escénico 2026<br>摄影 Fátima Ramírez Corona",
+"f.title":"摄影","f.cta":"⟡ 点击图片 — 扩展画廊 ⟡",
+"f.c1":"飞鸟之云 导演 Mario Mendieta","f.c2":"Samantha Leff 与 Renata Iberia","f.c3":"空气动力学的 Tralalero，或 Arturo Elías Ayub","f.c4":"ánimas 导演 Arely Reyes","f.c6":"树液之雨","f.c7":"Salvador Gallardo 或《当下》第 3 期",
+"f.close":"关闭","f.prev":"上一张","f.next":"下一张",
+"c.ldTop":"PAZZ FILMS 呈现","c.ldTl":"影片开始","c.ldBr":"胶卷 01 · 24 FPS","c.ldSkip":"跳过 ⟶","c.ldAria":"放映倒计时",
+"c.hero":"电影","c.heroSub":"制片 & 导演",
+"c.progTitle":"节目单","c.progR":"连续放映","c.progNote":"悬停查看剧照 · 点击进入影片档案",
+"c.ficha":"档案","c.bobina":"胶卷",
+"c.salaVideo":"视频","c.salaCanal":"YOUTUBE 频道","c.salaOk":"现已上线",
+"c.stillsTitle":"剧照 · 帧","c.cuadros":"帧",
+"c.verObra":"youtube · 观看作品","c.verYt":"在 youtube 观看",
+"c.corte":"· 换卷 ·",
+"nopalli.anio":"2025 · 纪录影像舞蹈",
+"nopalli.rol":"创作者 · 导演、编剧与特效",
+"nopalli.progM":"纪录影像舞蹈 · 02:56 · 创作者 · 编剧与特效",
+"nopalli.sin":"在墨西哥历史上，诺帕尔（仙人掌）的用途不断演变。它在一瞬间从食物变成了国家象征。如今，一系列新的改造将把它带向意想不到的地方。",
+"nopalli.k1":"片名","nopalli.k2":"类型","nopalli.v2":"纪录影像舞蹈","nopalli.k3":"时长","nopalli.v3":"02:56 分钟","nopalli.k4":"语言","nopalli.v4":"西班牙语","nopalli.k5":"国家","nopalli.v5":"墨西哥","nopalli.k6":"拍摄地","nopalli.v6":"Milpa Alta、Coacalco、Iztapalapa 与 Cuauhtémoc","nopalli.k7":"创作者","nopalli.k8":"制片","nopalli.v8":"Pedro P. Zaragoza García、Leticia Zarza Torres 与 Pedro A. Zaragoza Zarza","nopalli.k9":"编剧","nopalli.k10":"特效","nopalli.k11":"演员",
+"nopalli.st1":"STILL 01 — 镰刀","nopalli.st2":"STILL 02 — 组织","nopalli.st3":"STILL 03 — 诺帕尔与刺梨",
+"andrea.anio":"2024 · 人物纪录片",
+"andrea.rol":"纪录片编剧、导演与剪辑",
+"andrea.progM":"纪录片 · 20:19 · 纪录片编剧、导演与剪辑",
+"andrea.sin":"Andrea Santos Valdes 毕业于墨西哥国立自治大学（UNAM）法学院，获法学学士学位并荣获荣誉提名。她拥有两个硕士学位：一个在伊比利亚美洲大学（全额奖学金），另一个在司法学院（论文获荣誉提名）。她诞生于 SME 与 Ayotzinapa 社会运动之间，如今将她的抗争带入司法领域，具体而言是竞选 CDMX 司法纪律法庭的法官职位。在这里，我们分享她的生活、志向，以及尽管司法改革存在诸多矛盾，她为何仍参选成为司法者。",
+"andrea.k1":"类型","andrea.v1":"人物纪录片","andrea.k2":"纪录片编剧与导演","andrea.k3":"摄影指导","andrea.k4":"现场录音与原创音乐","andrea.k5":"剪辑",
+"andrea.st1":"STILL 01 — 家","andrea.st2":"STILL 02 — 交通","andrea.st3":"STILL 03 — 街道",
+"nicolasjaar.anio":"2024 · 诗歌与实验音乐现场",
+"nicolasjaar.rol":"摄影指导与视频剪辑",
+"nicolasjaar.progM":"诗歌与实验音乐现场 · 1 小时 · 摄影指导与视频剪辑",
+"nicolasjaar.sin":"在本期节目中，音乐家与作家 Nicolás Jaar 与我们展开一场关于沉默的维度、墙的暴力与另一种世界之可能的深入对话，并以一段强有力的声音即兴，引导我们反思自己在世界中的位置、行动的力量，以及控诉现代性之残暴的能力——提醒我们：巴勒斯坦的抗争，正是为有尊严的生活而战。",
+"nicolasjaar.k1":"导演与主持","nicolasjaar.k2":"制作","nicolasjaar.k3":"音频制作","nicolasjaar.k4":"摄影指导与视频剪辑","nicolasjaar.k5":"摄像","nicolasjaar.k6":"剧照摄影",
+"nicolasjaar.st1":"STILL 01 — 声音即兴","nicolasjaar.st2":"STILL 02 — 对话与聆听",
+"s.p1":"<b>燃烧荆棘与欢愉之石之子，强者之兄弟</b>，Pedro A. Zaragoza Zarza（pazz）于 <b>1991年11月9日</b> 诞生于 Urorbe。他是与世界之时嬉戏的共生者，19 世代作家，自学音乐人，苦难与庆典的歌者。",
+"s.p2":"他在 <b>FFyL-UNAM</b> 游走于科学、哲学与诗之间，并以 <b>actor red</b> 技法巩固了表演生涯。他专精于理解<span class=\"em\">大地的语言</span>，以及经由 Hamsa 向诸界域的多重翻译。",
+"s.p3":"2014 年创立 <b>sin-ismo、todoísmo</b>，亦称<span class=\"em\">一切主义</span>。<b>Pohualizcalli 电影与摄影学校</b>出身的编剧与导演。诗歌与实验音乐节目 <b>Silencio en llamas</b> 的电影摄影师。",
+"s.p4":"目前在 INBAL 舞蹈编创研究中心攻读<b>舞蹈创作与研究</b>本科学位。",
+"s.redes":"社交网络","s.contacto":"直接联系","s.correo":"邮箱","l.btn":"切换语言"
+},
+
+/* ── العربية ─────────────────────────────────────── */
+ar:{
+"nav.danza":"الرقص","nav.escritura":"الكتابة","nav.fotografia":"التصوير","nav.cine":"السينما","nav.semblanza":"السيرة",
+"navA.danza":"الانتقال إلى الرقص","navA.escritura":"الانتقال إلى الكتابة","navA.fotografia":"الانتقال إلى التصوير","navA.cine":"الانتقال إلى السينما","navA.semblanza":"الانتقال إلى السيرة","nav.main":"التنقل الرئيسي",
+"d.h1a":" أن نرقص أزمنة","d.h1b":"<em>الأرض</em>.",
+"mq.psoas":"العضلة القطنية","mq.gozo":"الغبطة","mq.caer":"السقوط","mq.traducir":"الترجمة","mq.escuchar":"الإصغاء","mq.respirar":"التنفس","mq.sostener":"السند","mq.turbulencias":"الاضطرابات","mq.caos":"الفوضى","mq.potencial":"الكامن",
+"d.dabkeDesc":"رقص جماعي يقاوم الاحتلال والإبادة الجماعية",
+"d.dabkeDir":"إخراج pazz",
+"d.dabkeInterp":"المؤدون: Areli Anais Osornio López، Daniela Cancino Teja، Prisma Carolina Guillen Martínez، Sandra Paola Gaytán Jimenez، Amanda Desiree Ramirez Lopez وPazz",
+"d.dabkeEnc":"اللقاء الوطني العاشر للرقص MX",
+"d.dabkeVenue":"متحف الفن الحديث CDMX · 2025",
+"d.galHead1":"أرشيف الدبكة ✳ 6 صور","d.galHead2":"← اسحب →",
+"d.galAria":"الدبكة — معرض من 6 صور","d.galRod":"كاروسيل",
+"d.prev":"الصورة السابقة","d.next":"الصورة التالية",
+"d.bitacora":"دفتر يوميات رقمي — اضغط على كل عبارة",
+"d.ph1t":"أثر الجسد","d.ph1x":"العمل الجسدي هو ما يفكك أنماط أو يعيد تشكيل قبليات الجسد.",
+"d.ph2t":"نوع الاقتراب الجسدي أو اللمس","d.ph2x":"من الجلد: فصل اللحم عن العظم وتشكيل العظم.",
+"d.ph3t":"التفكير بالقدمين","d.ph3x":"أخلاق على خطى وإيقاع أفضل العوالم مرونة.",
+"d.ph4t":"مصادفة تشريحية","d.ph4x":"الأذن تتطابق تمامًا مع القمة الحرقفية.",
+"d.ph5t":"العضلة القطنية","d.ph5x":"تربط العضلة القطنية منطقة أسفل الظهر كلها وتُدرَّب بطريقة غير مباشرة.",
+"d.ph6t":"Danzastre","d.ph6x":"أن نجعل الشعور يفكّر.",
+"d.runa1":"RUNA إخراج Jessica M. Castillo C.<br>المؤدون: Rooni - Pazz<br>Jardín Escénico 2026<br>تصوير Fátima Ramírez Corona",
+"d.runa2":"RUNA إخراج Jessica M. Castillo C.<br>المؤدي: Pazz<br>Jardín Escénico 2026<br>تصوير Fátima Ramírez Corona",
+"f.title":"التصوير","f.cta":"⟡ اضغط على الصورة — معرض موسع ⟡",
+"f.c1":"سحابة طيور إخراج Mario Mendieta","f.c2":"Samantha Leff وRenata Iberia","f.c3":"Tralalero الديناميكي الهوائي أو Arturo Elías Ayub","f.c4":"ánimas إخراج Arely Reyes","f.c6":"مطر النسغ","f.c7":"Salvador Gallardo أو الراهن رقم 3",
+"f.close":"إغلاق","f.prev":"السابق","f.next":"التالي",
+"c.ldTop":"PAZZ FILMS تقدم","c.ldTl":"بداية الفيلم","c.ldBr":"بكرة 01 · 24 إطارًا","c.ldSkip":"تخطي ⟶","c.ldAria":"العد التنازلي للعرض",
+"c.hero":"سينما","c.heroSub":"منتج ومخرج",
+"c.progTitle":"برنامج العرض","c.progR":"عرض متواصل","c.progNote":"مرر المؤشر لرؤية إطار · اضغط للدخول إلى البطاقة",
+"c.ficha":"بطاقة","c.bobina":"بكرة",
+"c.salaVideo":"فيديو","c.salaCanal":"قناة YOUTUBE","c.salaOk":"متاح الآن",
+"c.stillsTitle":"لقطات ثابتة · إطارات","c.cuadros":"إطارات",
+"c.verObra":"youtube · مشاهدة العمل","c.verYt":"شاهد على youtube",
+"c.corte":"· تغيير البكرة ·",
+"nopalli.anio":"2025 · فيديو رقص وثائقي",
+"nopalli.rol":"صانع الفيلم · إخراج وسيناريو ومؤثرات",
+"nopalli.progM":"فيديو رقص وثائقي · 02:56 · صانع الفيلم · السيناريو والمؤثرات",
+"nopalli.sin":"تغيّر استخدام النوبال عبر تاريخ المكسيك. تحوّل في لحظة من غذاء إلى رمز وطني. والآن، سلسلة من التعديلات الجديدة ستأخذه إلى أماكن غير متوقعة.",
+"nopalli.k1":"العنوان","nopalli.k2":"النوع","nopalli.v2":"فيديو رقص وثائقي","nopalli.k3":"المدة","nopalli.v3":"02:56 د","nopalli.k4":"اللغة","nopalli.v4":"الإسبانية","nopalli.k5":"البلد","nopalli.v5":"المكسيك","nopalli.k6":"مكان التصوير","nopalli.v6":"Milpa Alta وCoacalco وIztapalapa وCuauhtémoc","nopalli.k7":"صانع الفيلم","nopalli.k8":"الإنتاج","nopalli.v8":"Pedro P. Zaragoza García وLeticia Zarza Torres وPedro A. Zaragoza Zarza","nopalli.k9":"السيناريو","nopalli.k10":"المؤثرات الخاصة","nopalli.k11":"الممثلون",
+"nopalli.st1":"STILL 01 — المنجل","nopalli.st2":"STILL 02 — التنظيم","nopalli.st3":"STILL 03 — النوبال والتين الشوكي",
+"andrea.anio":"2024 · وثائقي بورتريه",
+"andrea.rol":"سيناريو وثائقي، إخراج ومونتاج",
+"andrea.progM":"وثائقي · 20:19 · سيناريو وثائقي، إخراج ومونتاج",
+"andrea.sin":"أندريا سانتوس فالديس حاصلة على إجازة في الحقوق من كلية الحقوق في UNAM مع مرتبة الشرف. تحمل درجتي ماجستير، إحداهما من الجامعة الأيبيرية الأمريكية (بمنحة كاملة) والأخرى من المدرسة القضائية (أطروحة بمرتبة شرف). وُلدت بين الحراكين الاجتماعيين SME وأيوتسينابا، وقد نقلت نضالها اليوم إلى السلطة القضائية، وتحديدًا إلى الترشح لمنصب قاضية في محكمة الانضباط القضائي في CDMX. نشارككم هنا لمحة من حياتها وطموحاتها وسبب ترشحها لتكون قاضية، رغم التناقضات الكثيرة المحيطة بإصلاح القضاء.",
+"andrea.k1":"النوع","andrea.v1":"وثائقي بورتريه","andrea.k2":"السيناريو الوثائقي والإخراج","andrea.k3":"إدارة التصوير","andrea.k4":"الصوت المباشر والموسيقى الأصلية","andrea.k5":"المونتاج",
+"andrea.st1":"STILL 01 — البيت","andrea.st2":"STILL 02 — التنقل","andrea.st3":"STILL 03 — الشارع",
+"nicolasjaar.anio":"2024 · جلسة شعر وموسيقى تجريبية",
+"nicolasjaar.rol":"إدارة التصوير ومونتاج الفيديو",
+"nicolasjaar.progM":"جلسة شعر وموسيقى تجريبية · ساعة واحدة · إدارة التصوير ومونتاج الفيديو",
+"nicolasjaar.sin":"في هذه الجلسة يرافقنا الموسيقي والكاتب نيكولاس جار ليشاركنا حوارًا عميقًا حول أبعاد الصمت وعنف الجدران وإمكانية عوالم أخرى، إضافة إلى ارتجال صوتي قوي يقودنا إلى التأمل في مكاننا في العالم وقدرتنا على الفعل وإمكانية فضح وحشية الحداثة — مذكرًا بأن النضال الفلسطيني هو النضال من أجل الحياة الكريمة.",
+"nicolasjaar.k1":"الإخراج والتقديم","nicolasjaar.k2":"الإنتاج","nicolasjaar.k3":"إنتاج الصوت","nicolasjaar.k4":"إدارة التصوير ومونتاج الفيديو","nicolasjaar.k5":"مشغّل الكاميرا","nicolasjaar.k6":"التصوير الثابت",
+"nicolasjaar.st1":"STILL 01 — ارتجال صوتي","nicolasjaar.st2":"STILL 02 — حوار وإصغاء",
+"s.p1":"<b>ابن العليقة المشتعلة والحجر المبتهج، أخُ للتي هي قادرة</b>، وُلد بيدرو أ. سرقسطة سارسا (pazz) في الأوروربي في <b>9 نوفمبر 1991</b>. كائن تكافلي يتسلى بوقت العالم كله، كاتب من جيل 19، موسيقي عصامي، منشد المشقات والاحتفالات.",
+"s.p2":"أبحر بين العلم والفلسفة والشعر في <b>FFyL-UNAM</b>، حيث رسّخ أيضًا مسيرته التمثيلية بتقنية <b>actor red</b>. تخصص في فهم <span class=\"em\">لغة الأرض</span>، وكذلك الترجمة المتعددة إلى الممالك المختلفة عبر الحمسة.",
+"s.p3":"مؤسس <b>اللا-مذهب، الكل-مذهب</b> أو ما يسمى <span class=\"em\">كل المذاهب</span> عام 2014. كاتب سيناريو ومخرج سينمائي من <b>مدرسة السينما والتصوير Pohualizcalli</b>. مصور سينمائي في برنامج الشعر والموسيقى التجريبية <b>Silencio en llamas</b>.",
+"s.p4":"يدرس حاليًا بكالوريوس <b>الإبداع والبحث الكوريغرافي</b> في مركز البحوث الكوريغرافية التابع لـ INBAL.",
+"s.redes":"الشبكات","s.contacto":"تواصل مباشر","s.correo":"البريد","l.btn":"تغيير اللغة"
+},
+
+/* ── فارسی ───────────────────────────────────────── */
+fa:{
+"nav.danza":"رقص","nav.escritura":"نوشتار","nav.fotografia":"عکاسی","nav.cine":"سینما","nav.semblanza":"شرح حال",
+"navA.danza":"رفتن به رقص","navA.escritura":"رفتن به نوشتار","navA.fotografia":"رفتن به عکاسی","navA.cine":"رفتن به سینما","navA.semblanza":"رفتن به شرح حال","nav.main":"ناوبری اصلی",
+"d.h1a":" رقصیدنِ زمانه‌ها","d.h1b":"از <em>زمین</em>.",
+"mq.psoas":"پسواس","mq.gozo":"شادی","mq.caer":"افتادن","mq.traducir":"ترجمه","mq.escuchar":"شنیدن","mq.respirar":"نفس","mq.sostener":"نگه داشتن","mq.turbulencias":"تلاطم‌ها","mq.caos":"آشوب","mq.potencial":"پتانسیل",
+"d.dabkeDesc":"رقصی جمعی که در برابر اشغال و نسل‌کشی مقاومت می‌کند",
+"d.dabkeDir":"کارگردان pazz",
+"d.dabkeInterp":"اجراکنندگان: Areli Anais Osornio López، Daniela Cancino Teja، Prisma Carolina Guillen Martínez، Sandra Paola Gaytán Jimenez، Amanda Desiree Ramirez Lopez و Pazz",
+"d.dabkeEnc":"دهمین گردهمایی ملی رقص MX",
+"d.dabkeVenue":"موزه هنر مدرن CDMX · 2025",
+"d.galHead1":"آرشیو دبکه ✳ 6 عکس","d.galHead2":"← بکشید →",
+"d.galAria":"دبکه — گالری 6 عکس","d.galRod":"کاروسل",
+"d.prev":"عکس قبلی","d.next":"عکس بعدی",
+"d.bitacora":"دفتر یادداشت دیجیتال — روی هر جمله بزنید",
+"d.ph1t":"اثر بدن","d.ph1x":"کار جسمانی همان چیزی است که پیش‌فرض‌های بدن را الگوزدایی یا الگوسازی مجدد می‌کند.",
+"d.ph2t":"نوع نزدیک شدن جسمانی یا لمس","d.ph2x":"از جنس پوست: جدا کردن گوشت از استخوان و شکل دادن به استخوان.",
+"d.ph3t":"اندیشیدن با پاها","d.ph3x":"اخلاقی به گام و آهنگِ بهترینِ جهان‌های انعطاف‌پذیر.",
+"d.ph4t":"تصادف آناتومیک","d.ph4x":"گوش دقیقاً با تاج خاصره منطبق است.",
+"d.ph5t":"پسواس","d.ph5x":"عضله پسواس تمام ناحیه کمر را به هم وصل می‌کند و به‌صورت غیرمستقیم تمرین داده می‌شود.",
+"d.ph6t":"Danzastre","d.ph6x":"احساس را به اندیشیدن واداشتن.",
+"d.runa1":"RUNA کارگردان Jessica M. Castillo C.<br>اجراکنندگان Rooni - Pazz<br>Jardín Escénico 2026<br>عکس Fátima Ramírez Corona",
+"d.runa2":"RUNA کارگردان Jessica M. Castillo C.<br>اجراکننده Pazz<br>Jardín Escénico 2026<br>عکس Fátima Ramírez Corona",
+"f.title":"عکاسی","f.cta":"⟡ روی تصویر کلیک کنید — گالری گسترده ⟡",
+"f.c1":"ابر پرندگان کارگردان Mario Mendieta","f.c2":"Samantha Leff و Renata Iberia","f.c3":"Tralalero آیرودینامیک یا Arturo Elías Ayub","f.c4":"ánimas کارگردان Arely Reyes","f.c6":"باران شیره","f.c7":"Salvador Gallardo یا شماره ۳ اکنون",
+"f.close":"بستن","f.prev":"قبلی","f.next":"بعدی",
+"c.ldTop":"PAZZ FILMS تقدیم می‌کند","c.ldTl":"آغاز فیلم","c.ldBr":"حلقه 01 · 24 فریم","c.ldSkip":"رد شدن ⟶","c.ldAria":"شمارش معکوس نمایش",
+"c.hero":"سینما","c.heroSub":"تهیه‌کننده و کارگردان",
+"c.progTitle":"برنامه نمایش","c.progR":"نمایش پیوسته","c.progNote":"نشانگر را عبور دهید تا فریمی ببینید · برای ورود به شناسنامه کلیک کنید",
+"c.ficha":"شناسنامه","c.bobina":"حلقه",
+"c.salaVideo":"ویدیو","c.salaCanal":"کانال YOUTUBE","c.salaOk":"هم‌اکنون در دسترس",
+"c.stillsTitle":"استیل‌ها · فریم‌ها","c.cuadros":"فریم",
+"c.verObra":"youtube · تماشای اثر","c.verYt":"تماشا در youtube",
+"c.corte":"· تعویض حلقه ·",
+"nopalli.anio":"2025 · ویدیودانس مستند",
+"nopalli.rol":"فیلم‌ساز · کارگردانی، فیلم‌نامه و جلوه‌ها",
+"nopalli.progM":"ویدیودانس مستند · 02:56 · فیلم‌ساز · فیلم‌نامه و جلوه‌ها",
+"nopalli.sin":"کاربرد نوپال در طول تاریخ مکزیک دگرگون شده است. در یک لحظه از خوراک به نماد ملی بدل شد. اکنون مجموعه‌ای از تغییرات تازه آن را به جاهای غیرمنتظره خواهد برد.",
+"nopalli.k1":"عنوان","nopalli.k2":"ژانر","nopalli.v2":"ویدیودانس مستند","nopalli.k3":"مدت","nopalli.v3":"02:56 دقیقه","nopalli.k4":"زبان","nopalli.v4":"اسپانیایی","nopalli.k5":"کشور","nopalli.v5":"مکزیک","nopalli.k6":"محل ساخت","nopalli.v6":"Milpa Alta، Coacalco، Iztapalapa و Cuauhtémoc","nopalli.k7":"فیلم‌ساز","nopalli.k8":"تهیه‌کنندگی","nopalli.v8":"Pedro P. Zaragoza García، Leticia Zarza Torres و Pedro A. Zaragoza Zarza","nopalli.k9":"فیلم‌نامه","nopalli.k10":"جلوه‌های ویژه","nopalli.k11":"بازیگران",
+"nopalli.st1":"STILL 01 — داس","nopalli.st2":"STILL 02 — سازمان‌دهی","nopalli.st3":"STILL 03 — نوپال و میوه کاکتوس",
+"andrea.anio":"2024 · مستند پرتره",
+"andrea.rol":"فیلم‌نامه مستند، کارگردانی و تدوین",
+"andrea.progM":"مستند · 20:19 · فیلم‌نامه مستند، کارگردانی و تدوین",
+"andrea.sin":"آندرئا سانتوس والدس دانش‌آموخته حقوق از دانشکده حقوق UNAM با تقدیر افتخاری است. دو کارشناسی ارشد دارد: یکی در دانشگاه ایبروآمریکانا (با بورسیه کامل) و دیگری در مدرسه قضایی (پایان‌نامه با تقدیر افتخاری). او که میان جنبش‌های اجتماعی SME و آیوتسیناپا زاده شده، اکنون پیکار خود را به قوه قضاییه منتقل کرده، مشخصاً برای نامزدی مقام قاضی در دادگاه انضباط قضایی CDMX. اینجا گوشه‌ای از زندگی، آرزوها و چرایی نامزدی او برای قضاوت را به اشتراک می‌گذاریم، با وجود تناقض‌های فراوان درباره اصلاح قوه قضاییه.",
+"andrea.k1":"ژانر","andrea.v1":"مستند پرتره","andrea.k2":"فیلم‌نامه مستند و کارگردانی","andrea.k3":"مدیر فیلم‌برداری","andrea.k4":"صدای زنده و موسیقی اورجینال","andrea.k5":"تدوین",
+"andrea.st1":"STILL 01 — خانه","andrea.st2":"STILL 02 — رفت‌وآمد","andrea.st3":"STILL 03 — خیابان",
+"nicolasjaar.anio":"2024 · نشست شعر و موسیقی تجربی",
+"nicolasjaar.rol":"مدیریت فیلم‌برداری و تدوین ویدیو",
+"nicolasjaar.progM":"نشست شعر و موسیقی تجربی · ۱ ساعت · مدیریت فیلم‌برداری و تدوین ویدیو",
+"nicolasjaar.sin":"در این نشست، موسیقی‌دان و نویسنده نیکلاس جار همراه ما می‌شود تا گفت‌وگویی عمیق درباره ابعاد سکوت، خشونت دیوارها و امکانِ جهان‌های دیگر داشته باشیم، به‌همراه یک بداهه صوتی قدرتمند که ما را به اندیشیدن درباره جایگاه‌مان در جهان، قدرت عمل‌مان و توانایی افشای خشونت مدرنیته وامی‌دارد — و یادآوری می‌کند که مبارزه فلسطین، مبارزه برای زندگی شایسته است.",
+"nicolasjaar.k1":"کارگردانی و اجرا","nicolasjaar.k2":"تهیه‌کنندگی","nicolasjaar.k3":"تهیه صدا","nicolasjaar.k4":"مدیریت فیلم‌برداری و تدوین ویدیو","nicolasjaar.k5":"فیلم‌بردار","nicolasjaar.k6":"عکاسی ثابت",
+"nicolasjaar.st1":"STILL 01 — بداهه صوتی","nicolasjaar.st2":"STILL 02 — گفت‌وگو و شنیدن",
+"s.p1":"<b>فرزند بوته سوزان و سنگ شادمان، برادرِ آن که تواناست</b>، پدرو آ. ساراگوسا سارسا (pazz) در <b>۹ نوامبر ۱۹۹۱</b> در اوروربه زاده می‌شود. همزیستی که با زمانِ جهان سرگرم است، نویسنده نسل ۱۹، موسیقی‌دان خودآموخته، خواننده سختی‌ها و جشن‌ها.",
+"s.p2":"در <b>FFyL-UNAM</b> میان علم، فلسفه و شعر کشتی‌رانی کرد و همان‌جا حرفه بازیگری‌اش را با تکنیک <b>actor red</b> استوار ساخت. در فهم <span class=\"em\">زبان زمین</span> و نیز ترجمه چندگانه به قلمروهای گوناگون از راه خمسه تخصص یافت.",
+"s.p3":"بنیان‌گذار <b>بی‌ایسمی، همه‌ایسمی</b> یا به‌قولی <span class=\"em\">همه ایسم‌ها</span> در سال ۲۰۱۴. فیلم‌نامه‌نویس و کارگردان سینما از <b>مدرسه سینما و عکاسی Pohualizcalli</b>. فیلم‌بردار برنامه شعر و موسیقی تجربی <b>Silencio en llamas</b>.",
+"s.p4":"اکنون در مقطع کارشناسی <b>آفرینش و پژوهش رقص</b> در مرکز پژوهش‌های کورئوگرافیک INBAL تحصیل می‌کند.",
+"s.redes":"شبکه‌ها","s.contacto":"تماس مستقیم","s.correo":"ایمیل","l.btn":"تغییر زبان"
+},
+
+/* ── FRANÇAIS ────────────────────────────────────── */
+fr:{
+"nav.danza":"danse","nav.escritura":"écriture","nav.fotografia":"photographie","nav.cine":"cinéma","nav.semblanza":"profil",
+"navA.danza":"aller à danse","navA.escritura":"aller à écriture","navA.fotografia":"aller à photographie","navA.cine":"aller à cinéma","navA.semblanza":"aller à profil","nav.main":"navigation principale",
+"d.h1a":" Danser les temps","d.h1b":"de la <em>Terre</em>.",
+"mq.gozo":"joie","mq.caer":"chuter","mq.traducir":"traduire","mq.escuchar":"écouter","mq.respirar":"respirer","mq.sostener":"soutenir","mq.turbulencias":"turbulences","mq.caos":"chaos","mq.potencial":"potentiel",
+"d.dabkeDesc":"danse communautaire qui résiste à l'occupation et au génocide",
+"d.dabkeDir":"réal. pazz",
+"d.dabkeInterp":"interprètes : Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez et Pazz",
+"d.dabkeEnc":"10e Rencontre Nationale de Danse MX",
+"d.dabkeVenue":"Musée d'Art Moderne CDMX · 2025",
+"d.galHead1":"archive dabke ✳ 6 photographies","d.galHead2":"← glisser →",
+"d.galAria":"Dabke — galerie de 6 photographies","d.galRod":"carrousel",
+"d.prev":"Photo précédente","d.next":"Photo suivante",
+"d.bitacora":"carnet numérique — appuyez sur chaque phrase",
+"d.ph1t":"Empreinte corporelle","d.ph1x":"Le travail physique est ce qui dépatronise ou repatronise les a priori du corps.",
+"d.ph2t":"Type d'approche physique ou de toucher","d.ph2x":"De peau : décoller la chair de l'os et modeler l'os.",
+"d.ph3t":"Penser avec les pieds","d.ph3x":"Éthique au pas et au rythme du meilleur des mondes flexibles.",
+"d.ph4t":"Coïncidence anatomique","d.ph4x":"L'oreille coïncide exactement avec la crête iliaque.",
+"d.ph5x":"Le psoas relie toute la région lombaire et s'entraîne indirectement.",
+"d.ph6t":"Danzastre","d.ph6x":"Faire sentir-penser.",
+"d.runa1":"RUNA Réal. Jessica M. Castillo C.<br>Interprètes Rooni - Pazz<br>Jardín Escénico 2026<br>Photographie Fátima Ramírez Corona",
+"d.runa2":"RUNA Réal. Jessica M. Castillo C.<br>Interprète Pazz<br>Jardín Escénico 2026<br>Photographie Fátima Ramírez Corona",
+"f.title":"PHOTOGRAPHIE","f.cta":"⟡ CLIQUEZ SUR L'IMAGE — GALERIE ÉTENDUE ⟡",
+"f.c1":"nuée d'oiseaux réal. Mario Mendieta","f.c2":"Samantha Leff et Renata Iberia","f.c3":"Tralalero aérodynamique ou Arturo Elías Ayub","f.c4":"ánimas réal. Arely Reyes","f.c6":"Pluie de sève","f.c7":"Salvador Gallardo ou de l'Actuel n° 3",
+"f.close":"fermer","f.prev":"précédente","f.next":"suivante",
+"c.ldTop":"PAZZ FILMS PRÉSENTE","c.ldTl":"DÉBUT DU FILM","c.ldBr":"BOBINE 01 · 24 IPS","c.ldSkip":"PASSER ⟶","c.ldAria":"Compte à rebours de projection",
+"c.hero":"CINÉMA","c.heroSub":"producteur & réalisateur",
+"c.progTitle":"PROGRAMME DE SALLE","c.progR":"séance continue","c.progNote":"survolez pour voir un photogramme · cliquez pour entrer dans la fiche",
+"c.ficha":"fiche","c.bobina":"bobine",
+"c.salaVideo":"VIDÉO","c.salaCanal":"CHAÎNE YOUTUBE","c.salaOk":"disponible maintenant",
+"c.stillsTitle":"STILLS · PHOTOGRAMMES","c.cuadros":"photogrammes",
+"c.verObra":"youtube · voir l'œuvre","c.verYt":"voir sur youtube",
+"c.corte":"· changement de bobine ·",
+"nopalli.anio":"2025 · vidéodanse documentaire",
+"nopalli.rol":"Réalisateur · réalisation, scénario & fx",
+"nopalli.progM":"Vidéodanse documentaire · 02:56 · Réalisateur · SCÉNARIO et FX",
+"nopalli.sin":"L'usage du nopal a changé au fil de l'histoire mexicaine. D'aliment, il est devenu en un instant symbole national. Désormais, une série de nouvelles modifications le mènera vers des lieux insoupçonnés.",
+"nopalli.k1":"titre","nopalli.k2":"genre","nopalli.v2":"Vidéodanse documentaire","nopalli.k3":"durée","nopalli.k4":"langue","nopalli.v4":"Espagnol","nopalli.k5":"pays","nopalli.v5":"Mexique","nopalli.k6":"lieu de réalisation","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa et Cuauhtémoc","nopalli.k7":"réalisateur","nopalli.k8":"production","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres et Pedro A. Zaragoza Zarza","nopalli.k9":"scénario","nopalli.k10":"effets spéciaux","nopalli.k11":"distribution",
+"nopalli.st1":"STILL 01 — faux","nopalli.st2":"STILL 02 — organisation","nopalli.st3":"STILL 03 — nopal et figues de Barbarie",
+"andrea.anio":"2024 · documentaire-portrait",
+"andrea.rol":"Scénario documentaire, réalisation & montage",
+"andrea.progM":"Documentaire · 20:19 · Scénario documentaire, Réalisation et Montage",
+"andrea.sin":"Andrea Santos Valdes est diplômée en droit de la Faculté de droit de l'UNAM, avec mention honorable. Elle détient deux masters, l'un à l'Universidad Iberoamericana (entièrement boursière) et l'autre à l'Escuela Judicial (thèse avec mention). Née entre les mouvements sociaux du SME et d'Ayotzinapa, elle a déplacé sa lutte vers le pouvoir judiciaire, précisément vers sa candidature comme MAGISTRATE au Tribunal de discipline judiciaire de CDMX. Nous partageons ici un peu de sa vie, de ses aspirations et les raisons de sa candidature pour devenir juge, malgré les nombreuses contradictions autour de la réforme judiciaire.",
+"andrea.k1":"genre","andrea.v1":"Documentaire-portrait","andrea.k2":"scénario documentaire et réalisation","andrea.k3":"dir. de la photographie","andrea.k4":"son direct et musique originale","andrea.k5":"montage",
+"andrea.st1":"STILL 01 — maison","andrea.st2":"STILL 02 — transport","andrea.st3":"STILL 03 — rue",
+"nicolasjaar.anio":"2024 · séance de poésie et musique expérimentale",
+"nicolasjaar.rol":"Direction photo & montage vidéo",
+"nicolasjaar.progM":"Séance de poésie et musique expérimentale · 1 H · Direction photo et montage vidéo",
+"nicolasjaar.sin":"Dans cette séance, le musicien et écrivain Nicolás Jaar nous accompagne pour partager un dialogue profond sur les dimensions du silence, la violence des murs et la possibilité d'autres mondes, ainsi qu'une puissante improvisation sonore qui nous amène à réfléchir sur notre place dans le monde, notre pouvoir d'agir et notre capacité à dénoncer la brutalité de la modernité — en rappelant que la lutte palestinienne est la lutte pour une vie digne.",
+"nicolasjaar.k1":"réalisation et animation","nicolasjaar.k2":"production","nicolasjaar.k3":"production audio","nicolasjaar.k4":"direction photo et montage vidéo","nicolasjaar.k5":"cadreur","nicolasjaar.k6":"photo fixe",
+"nicolasjaar.st1":"STILL 01 — improvisation sonore","nicolasjaar.st2":"STILL 02 — dialogue et écoute",
+"s.p1":"<b>Fils de la Ronce ardente et de la Pierre jouissante, frère de celle qui est puissante</b>, Pedro A. Zaragoza Zarza (pazz) naît dans l'Urorbe le <b>9 novembre 1991</b>. Symbiote qui s'amuse avec tout le temps du monde, écrivain de la génération de 19, musicien autodidacte, chanteur de peines et de célébrations.",
+"s.p2":"Il navigua entre science, philosophie et poésie à la <b>FFyL-UNAM</b>, où il consolida aussi sa carrière d'acteur avec la technique de l'<b>actor red</b>. Il se spécialisa dans la compréhension du <span class=\"em\">langage de la Terre</span>, ainsi que de la multiple traduction vers les différents règnes via la Hamsa.",
+"s.p3":"Fondateur du <b>sin-isme, todo-isme</b> aussi appelé <span class=\"em\">tous les ismes</span> en 2014. Scénariste et réalisateur de cinéma de l'<b>École de Cinéma et de Photographie Pohualizcalli</b>. Directeur photo de l'émission de poésie et musique expérimentale <b>Silencio en llamas</b>.",
+"s.p4":"Il étudie actuellement la licence de <b>Création et Recherche Chorégraphique</b> au Centre de Recherche Chorégraphique de l'INBAL.",
+"s.redes":"réseaux","s.contacto":"contact direct","s.correo":"courriel","l.btn":"Changer de langue"
+},
+
+/* ── DEUTSCH ─────────────────────────────────────── */
+de:{
+"nav.danza":"Tanz","nav.escritura":"Schrift","nav.fotografia":"Fotografie","nav.cine":"Film","nav.semblanza":"Profil",
+"navA.danza":"zu Tanz","navA.escritura":"zu Schrift","navA.fotografia":"zu Fotografie","navA.cine":"zu Film","navA.semblanza":"zu Profil","nav.main":"Hauptnavigation",
+"d.h1a":" Die Zeiten tanzen","d.h1b":"der <em>Erde</em>.",
+"mq.gozo":"Freude","mq.caer":"fallen","mq.traducir":"übersetzen","mq.escuchar":"hören","mq.respirar":"atmen","mq.sostener":"halten","mq.turbulencias":"Turbulenzen","mq.caos":"Chaos","mq.potencial":"Potenzial",
+"d.dabkeDesc":"gemeinschaftlicher Tanz, der Besatzung und Völkermord widersteht",
+"d.dabkeDir":"Regie pazz",
+"d.dabkeInterp":"Mitwirkende: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez und Pazz",
+"d.dabkeEnc":"10. Nationales Tanztreffen MX",
+"d.dabkeVenue":"Museum für Moderne Kunst CDMX · 2025",
+"d.galHead1":"Archiv Dabke ✳ 6 Fotografien","d.galHead2":"← wischen →",
+"d.galAria":"Dabke — Galerie mit 6 Fotografien","d.galRod":"Karussell",
+"d.prev":"Vorheriges Foto","d.next":"Nächstes Foto",
+"d.bitacora":"digitales Logbuch — tippe auf jeden Satz",
+"d.ph1t":"Körperliche Spur","d.ph1x":"Die körperliche Arbeit ist es, die das A priori des Körpers entmustert oder neu mustert.",
+"d.ph2t":"Art der körperlichen Annäherung oder Berührung","d.ph2x":"Von Haut: das Fleisch vom Knochen lösen und den Knochen formen.",
+"d.ph3t":"Mit den Füßen denken","d.ph3x":"Ethik im Schritt und im Takt der besten der flexiblen Welten.",
+"d.ph4t":"Anatomische Koinzidenz","d.ph4x":"Das Ohr deckt sich exakt mit dem Darmbeinkamm.",
+"d.ph5x":"Der Psoas verbindet die gesamte Lendenregion und wird indirekt trainiert.",
+"d.ph6t":"Danzastre","d.ph6x":"Fühlen denken machen.",
+"d.runa1":"RUNA Regie Jessica M. Castillo C.<br>Mitwirkende Rooni - Pazz<br>Jardín Escénico 2026<br>Fotografie Fátima Ramírez Corona",
+"d.runa2":"RUNA Regie Jessica M. Castillo C.<br>Mitwirkende Pazz<br>Jardín Escénico 2026<br>Fotografie Fátima Ramírez Corona",
+"f.title":"FOTOGRAFIE","f.cta":"⟡ KLICK AUF BILD — ERWEITERTE GALERIE ⟡",
+"f.c1":"Vogelwolke Regie Mario Mendieta","f.c2":"Samantha Leff und Renata Iberia","f.c3":"Aerodynamischer Tralalero oder Arturo Elías Ayub","f.c4":"ánimas Regie Arely Reyes","f.c6":"Saftregen","f.c7":"Salvador Gallardo oder des Aktuellen Nr. 3",
+"f.close":"schließen","f.prev":"zurück","f.next":"weiter",
+"c.ldTop":"PAZZ FILMS PRÄSENTIERT","c.ldTl":"FILMBEGINN","c.ldBr":"ROLLE 01 · 24 FPS","c.ldSkip":"ÜBERSPRINGEN ⟶","c.ldAria":"Projektions-Countdown",
+"c.hero":"FILM","c.heroSub":"Produzent & Regisseur",
+"c.progTitle":"PROGRAMMHEFT","c.progR":"Dauervorstellung","c.progNote":"Cursor bewegen für ein Standbild · klicken für die Filmkarte",
+"c.ficha":"Karte","c.bobina":"Rolle",
+"c.salaVideo":"VIDEO","c.salaCanal":"YOUTUBE-KANAL","c.salaOk":"jetzt verfügbar",
+"c.stillsTitle":"STILLS · FILMBILDER","c.cuadros":"Bilder",
+"c.verObra":"youtube · Werk ansehen","c.verYt":"auf youtube ansehen",
+"c.corte":"· Rollenwechsel ·",
+"nopalli.anio":"2025 · dokumentarischer Videotanz",
+"nopalli.rol":"Filmemacher · Regie, Drehbuch & FX",
+"nopalli.progM":"Dokumentarischer Videotanz · 02:56 · Filmemacher · DREHBUCH und FX",
+"nopalli.sin":"Die Verwendung des Nopal hat sich im Laufe der mexikanischen Geschichte gewandelt. Vom Nahrungsmittel wurde er im Nu zum Nationalsymbol. Nun wird eine Reihe neuer Modifikationen ihn an ungeahnte Orte führen.",
+"nopalli.k1":"Titel","nopalli.k2":"Genre","nopalli.v2":"Dokumentarischer Videotanz","nopalli.k3":"Dauer","nopalli.k4":"Sprache","nopalli.v4":"Spanisch","nopalli.k5":"Land","nopalli.v5":"Mexiko","nopalli.k6":"Drehorte","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa und Cuauhtémoc","nopalli.k7":"Filmemacher","nopalli.k8":"Produktion","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres und Pedro A. Zaragoza Zarza","nopalli.k9":"Drehbuch","nopalli.k10":"Spezialeffekte","nopalli.k11":"Besetzung",
+"nopalli.st1":"STILL 01 — Sense","nopalli.st2":"STILL 02 — Organisation","nopalli.st3":"STILL 03 — Nopal und Kaktusfeigen",
+"andrea.anio":"2024 · Porträt-Dokumentarfilm",
+"andrea.rol":"Dokumentarisches Drehbuch, Regie & Schnitt",
+"andrea.progM":"Dokumentarfilm · 20:19 · Dokumentarisches Drehbuch, Regie und Schnitt",
+"andrea.sin":"Andrea Santos Valdes hat einen Abschluss in Rechtswissenschaften der Juristischen Fakultät der UNAM mit Auszeichnung. Sie besitzt zwei Masterabschlüsse, einen an der Universidad Iberoamericana (Vollstipendium) und einen an der Escuela Judicial (These mit Auszeichnung). Geboren zwischen den sozialen Bewegungen der SME und Ayotzinapas, hat sie ihren Kampf nun in die Justiz verlagert, konkret in ihre Kandidatur als RICHTERIN am Disziplinargericht der CDMX. Hier teilen wir einen Einblick in ihr Leben, ihre Ziele und warum sie kandidierte, Richterin zu werden, trotz der vielen Widersprüche der Justizreform.",
+"andrea.k1":"Genre","andrea.v1":"Porträt-Dokumentarfilm","andrea.k2":"dokumentarisches Drehbuch und Regie","andrea.k3":"Kameraführung","andrea.k4":"Direktton und Originalmusik","andrea.k5":"Schnitt",
+"andrea.st1":"STILL 01 — Haus","andrea.st2":"STILL 02 — Verkehr","andrea.st3":"STILL 03 — Straße",
+"nicolasjaar.anio":"2024 · Sitzung für Poesie und experimentelle Musik",
+"nicolasjaar.rol":"Kameraführung & Videoschnitt",
+"nicolasjaar.progM":"Sitzung für Poesie und experimentelle Musik · 1 STD · Kameraführung und Videoschnitt",
+"nicolasjaar.sin":"In dieser Sitzung begleitet uns der Musiker und Schriftsteller Nicolás Jaar mit einem tiefen Dialog über die Dimensionen der Stille, die Gewalt der Mauern und die Möglichkeit anderer Welten, sowie einer kraftvollen Klangimprovisation, die uns dazu bringt, über unseren Platz in der Welt, unsere Handlungsmacht und die Fähigkeit nachzudenken, die Brutalität der Moderne anzuprangern — im Bewusstsein, dass der palästinensische Kampf der Kampf um ein würdiges Leben ist.",
+"nicolasjaar.k1":"Regie und Moderation","nicolasjaar.k2":"Produktion","nicolasjaar.k3":"Audioproduktion","nicolasjaar.k4":"Kameraführung und Videoschnitt","nicolasjaar.k5":"Kameraoperator","nicolasjaar.k6":"Standfotos",
+"nicolasjaar.st1":"STILL 01 — Klangimprovisation","nicolasjaar.st2":"STILL 02 — Dialog und Zuhören",
+"s.p1":"<b>Sohn des brennenden Dornbuschs und des genießenden Steins, Bruder der Mächtigen</b>, Pedro A. Zaragoza Zarza (pazz) wird in der Urorbe am <b>9. November 1991</b> geboren. Symbiont, der sich mit aller Zeit der Welt vergnügt, Schriftsteller der Generation 19, autodidaktischer Musiker, Sänger von Nöten und Feiern.",
+"s.p2":"Er bewegte sich zwischen Wissenschaft, Philosophie und Poesie an der <b>FFyL-UNAM</b>, wo er auch seine Schauspielkarriere mit der Technik des <b>actor red</b> festigte. Er spezialisierte sich darauf, die <span class=\"em\">Sprache der Erde</span> zu verstehen sowie die vielfache Übersetzung in die verschiedenen Reiche über die Hamsa.",
+"s.p3":"Gründer des <b>Sin-ismus, Todo-ismus</b>, auch <span class=\"em\">alle Ismen</span> genannt, im Jahr 2014. Drehbuchautor und Filmregisseur durch die <b>Schule für Film und Fotografie Pohualizcalli</b>. Kameramann bei der Sendung für Poesie und experimentelle Musik <b>Silencio en llamas</b>.",
+"s.p4":"Derzeit studiert er den Bachelor <b>Tanzschöpfung und -forschung</b> am Zentrum für choreografische Forschung des INBAL.",
+"s.redes":"Netzwerke","s.contacto":"Direktkontakt","s.correo":"E-Mail","l.btn":"Sprache ändern"
+},
+
+/* ── 日本語 ──────────────────────────────────────── */
+ja:{
+"nav.danza":"ダンス","nav.escritura":"文章","nav.fotografia":"写真","nav.cine":"映画","nav.semblanza":"略歴",
+"navA.danza":"ダンスへ","navA.escritura":"文章へ","navA.fotografia":"写真へ","navA.cine":"映画へ","navA.semblanza":"略歴へ","nav.main":"メインナビゲーション",
+"d.h1a":"踊る、","d.h1b":"<em>大地</em>の時を。",
+"mq.psoas":"大腰筋","mq.gozo":"歓喜","mq.caer":"落ちる","mq.traducir":"翻訳","mq.escuchar":"聴く","mq.respirar":"呼吸","mq.sostener":"支える","mq.turbulencias":"乱流","mq.caos":"混沌","mq.potencial":"潜在",
+"d.dabkeDesc":"占領とジェノサイドに抵抗する共同体のダンス",
+"d.dabkeDir":"監督 pazz",
+"d.dabkeInterp":"出演：Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez、Pazz",
+"d.dabkeEnc":"第10回 全国ダンスの集い MX",
+"d.dabkeVenue":"近代美術館 CDMX · 2025",
+"d.galHead1":"ダブケ・アーカイブ ✳ 写真6点","d.galHead2":"← スライド →",
+"d.galAria":"Dabke — 写真6点のギャラリー","d.galRod":"カルーセル",
+"d.prev":"前の写真","d.next":"次の写真",
+"d.bitacora":"デジタル日誌 — 各フレーズをタップ",
+"d.ph1t":"身体の痕跡","d.ph1x":"身体的な作業こそが、身体のア・プリオリを脱パターン化、あるいは再パターン化する。",
+"d.ph2t":"身体的な接近や触れ合いの種類","d.ph2x":"皮膚から：肉を骨からはがし、骨をかたどる。",
+"d.ph3t":"足で考える","d.ph3x":"最も柔軟な世界の、歩幅とリズムによる倫理。",
+"d.ph4t":"解剖学的な一致","d.ph4x":"耳は腸骨稜と完全に一致する。",
+"d.ph5t":"大腰筋","d.ph5x":"大腰筋は腰部全体をつなぎ、間接的に鍛えられる。",
+"d.ph6t":"Danzastre","d.ph6x":"感じることを考えさせる。",
+"d.runa1":"RUNA 監督 Jessica M. Castillo C.<br>出演 Rooni - Pazz<br>Jardín Escénico 2026<br>写真 Fátima Ramírez Corona",
+"d.runa2":"RUNA 監督 Jessica M. Castillo C.<br>出演 Pazz<br>Jardín Escénico 2026<br>写真 Fátima Ramírez Corona",
+"f.title":"写真","f.cta":"⟡ 画像をクリック — 拡張ギャラリー ⟡",
+"f.c1":"鳥の雲 監督 Mario Mendieta","f.c2":"Samantha Leff と Renata Iberia","f.c3":"空力的 Tralalero、あるいは Arturo Elías Ayub","f.c4":"ánimas 監督 Arely Reyes","f.c6":"樹液の雨","f.c7":"Salvador Gallardo または『現在』第3号",
+"f.close":"閉じる","f.prev":"前へ","f.next":"次へ",
+"c.ldTop":"PAZZ FILMS が贈る","c.ldTl":"上映開始","c.ldBr":"リール 01 · 24 FPS","c.ldSkip":"スキップ ⟶","c.ldAria":"上映カウントダウン",
+"c.hero":"映画","c.heroSub":"プロデューサー＆監督",
+"c.progTitle":"上演プログラム","c.progR":"連続上映","c.progNote":"カーソルを重ねてスチール表示 · クリックで作品カードへ",
+"c.ficha":"カード","c.bobina":"リール",
+"c.salaVideo":"映像","c.salaCanal":"YOUTUBE チャンネル","c.salaOk":"公開中",
+"c.stillsTitle":"スチール · フォトグラム","c.cuadros":"コマ",
+"c.verObra":"youtube · 作品を観る","c.verYt":"youtubeで観る",
+"c.corte":"· リール交換 ·",
+"nopalli.anio":"2025 · ドキュメンタリー映像ダンス",
+"nopalli.rol":"作家 · 監督・脚本・VFX",
+"nopalli.progM":"ドキュメンタリー映像ダンス · 02:56 · 作家 · 脚本とVFX",
+"nopalli.sin":"ノパルの用途はメキシコの歴史の中で変わってきた。一瞬にして食料から国の象徴へと変わった。今、新たな改良の数々が、思いもよらぬ場所へと運んでいくだろう。",
+"nopalli.k1":"タイトル","nopalli.k2":"ジャンル","nopalli.v2":"ドキュメンタリー映像ダンス","nopalli.k3":"上映時間","nopalli.v3":"02:56 分","nopalli.k4":"言語","nopalli.v4":"スペイン語","nopalli.k5":"国","nopalli.v5":"メキシコ","nopalli.k6":"製作地","nopalli.v6":"Milpa Alta、Coacalco、Iztapalapa、Cuauhtémoc","nopalli.k7":"作家","nopalli.k8":"製作","nopalli.v8":"Pedro P. Zaragoza García、Leticia Zarza Torres と Pedro A. Zaragoza Zarza","nopalli.k9":"脚本","nopalli.k10":"特殊効果","nopalli.k11":"出演",
+"nopalli.st1":"STILL 01 — 大鎌","nopalli.st2":"STILL 02 — 組織","nopalli.st3":"STILL 03 — ノパルとトゥナ",
+"andrea.anio":"2024 · ポートレート・ドキュメンタリー",
+"andrea.rol":"ドキュメンタリー脚本・監督・編集",
+"andrea.progM":"ドキュメンタリー · 20:19 · ドキュメンタリー脚本・監督・編集",
+"andrea.sin":"Andrea Santos Valdes は UNAM 法学部を優等で卒業した法学士である。修士号を2つ持ち、1つはイベロアメリカーナ大学（全額奨学金）、もう1つは司法学校（論文優等）。SME と Ayotzinapa の社会運動の中で生まれ、現在は闘いの場を司法に移した。具体的には CDMX 司法規律裁判所の判事候補である。ここでは司法改革をめぐる多くの矛盾にもかかわらず、彼女の人生と志、そして裁判官に立候補した理由を少しだけ共有する。",
+"andrea.k1":"ジャンル","andrea.v1":"ポートレート・ドキュメンタリー","andrea.k2":"ドキュメンタリー脚本・監督","andrea.k3":"撮影監督","andrea.k4":"現場録音・オリジナル音楽","andrea.k5":"編集",
+"andrea.st1":"STILL 01 — 家","andrea.st2":"STILL 02 — 移動","andrea.st3":"STILL 03 — 通り",
+"nicolasjaar.anio":"2024 · 詩と実験音楽のセッション",
+"nicolasjaar.rol":"撮影監督＆映像編集",
+"nicolasjaar.progM":"詩と実験音楽のセッション · 1時間 · 撮影監督＆映像編集",
+"nicolasjaar.sin":"今回のセッションには音楽家・作家の Nicolás Jaar が登場し、沈黙の次元、壁の暴力、そして別の世界の可能性について深い対話を繰り広げる。さらに力強い音の即興が、私たちの世界での居場所、行動する力、そして現代の残虐さを告発する力について考えさせる——パレスチナの闘いこそが、尊厳ある生のための闘いであることを思い出させながら。",
+"nicolasjaar.k1":"監督・進行","nicolasjaar.k2":"製作","nicolasjaar.k3":"オーディオ製作","nicolasjaar.k4":"撮影監督・映像編集","nicolasjaar.k5":"カメラオペレーター","nicolasjaar.k6":"スチール写真",
+"nicolasjaar.st1":"STILL 01 — 音の即興","nicolasjaar.st2":"STILL 02 — 対話と傾聴",
+"s.p1":"<b>燃える茨と悦ぶ石の子、力ある者の兄弟</b>、Pedro A. Zaragoza Zarza（pazz）は Urorbe に <b>1991年11月9日</b> 生まれた。世界の時間で遊ぶ共生者、19世代の作家、独学の音楽家、苦難と祝祭の歌い手。",
+"s.p2":"<b>FFyL-UNAM</b> で科学・哲学・詩の間を航海し、<b>actor red</b> の技法で俳優としての歩みも確かなものにした。<span class=\"em\">大地の言語</span>の理解、そして Hamsa を経て異なる諸領域へ多重に翻訳することを専門とした。",
+"s.p3":"2014年に <b>sin-ismo、todoísmo</b>、別名<span class=\"em\">すべてのイスマス</span>を創始。<b>Pohualizcalli 映画・写真学校</b>出身の脚本家・映画監督。詩と実験音楽の番組 <b>Silencio en llamas</b> の撮影監督。",
+"s.p4":"現在、INBAL 振付研究センターにて<b>ダンス創作と研究</b>の学士課程を学ぶ。",
+"s.redes":"SNS","s.contacto":"直接の連絡先","s.correo":"メール","l.btn":"言語を変更"
+},
+
+/* ── PORTUGUÊS ───────────────────────────────────── */
+pt:{
+"nav.danza":"dança","nav.escritura":"escrita","nav.fotografia":"fotografia","nav.cine":"cinema","nav.semblanza":"perfil",
+"navA.danza":"ir para dança","navA.escritura":"ir para escrita","navA.fotografia":"ir para fotografia","navA.cine":"ir para cinema","navA.semblanza":"ir para perfil","nav.main":"navegação principal",
+"d.h1a":" Dançar os tempos","d.h1b":"da <em>Terra</em>.",
+"mq.gozo":"gozo","mq.caer":"cair","mq.traducir":"traduzir","mq.escuchar":"escutar","mq.respirar":"respirar","mq.sostener":"sustentar","mq.turbulencias":"turbulências","mq.caos":"caos","mq.potencial":"potencial",
+"d.dabkeDesc":"dança comunitária que resiste à ocupação e ao genocídio",
+"d.dabkeInterp":"intérpretes: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez e Pazz",
+"d.dabkeEnc":"10º Encontro Nacional de Dança MX",
+"d.dabkeVenue":"Museu de Arte Moderna CDMX · 2025",
+"d.galHead1":"arquivo dabke ✳ 6 fotografias","d.galHead2":"← deslize →",
+"d.galAria":"Dabke — galeria de 6 fotografias","d.galRod":"carrossel",
+"d.prev":"Foto anterior","d.next":"Foto seguinte",
+"d.bitacora":"diário digital — toque em cada frase",
+"d.ph1t":"Marca corporal","d.ph1x":"O trabalho físico é o que despadroniza ou repadroniza os a priori do corpo.",
+"d.ph2t":"Tipo de aproximação física ou toque","d.ph2x":"De pele: descolar a carne do osso e moldar o osso.",
+"d.ph3t":"Pensar com os pés","d.ph3x":"Ética ao passo e ao ritmo do melhor dos mundos flexíveis.",
+"d.ph4t":"Coincidência anatômica","d.ph4x":"A orelha coincide exatamente com a crista ilíaca.",
+"d.ph5x":"O psoas conecta toda a região lombar e é treinado indiretamente.",
+"d.ph6t":"Danzastre","d.ph6x":"Fazer sentir-pensar.",
+"d.runa1":"RUNA Dir. Jessica M. Castillo C.<br>Intérpretes Rooni - Pazz<br>Jardín Escénico 2026<br>Fotografia Fátima Ramírez Corona",
+"d.runa2":"RUNA Dir. Jessica M. Castillo C.<br>Intérprete Pazz<br>Jardín Escénico 2026<br>Fotografia Fátima Ramírez Corona",
+"f.title":"FOTOGRAFIA","f.cta":"⟡ CLIQUE NA IMAGEM — GALERIA AMPLIADA ⟡",
+"f.c1":"nuvem de pássaros dir. Mario Mendieta","f.c2":"Samantha Leff e Renata Iberia","f.c3":"Tralalero aerodinâmico ou Arturo Elías Ayub","f.c6":"Chuva de seiva","f.c7":"Salvador Gallardo ou do Atual nº 3",
+"f.close":"fechar","f.prev":"anterior","f.next":"seguinte",
+"c.ldTop":"PAZZ FILMS APRESENTA","c.ldTl":"INÍCIO DO FILME","c.ldSkip":"PULAR ⟶","c.ldAria":"Contagem regressiva de projeção",
+"c.hero":"CINEMA","c.heroSub":"produtor & diretor",
+"c.progTitle":"PROGRAMA DE MÃO","c.progR":"sessão contínua","c.progNote":"passe o cursor para ver um fotograma · clique para entrar na ficha",
+"c.ficha":"ficha","c.bobina":"bobina",
+"c.salaVideo":"VÍDEO","c.salaCanal":"CANAL DO YOUTUBE","c.salaOk":"disponível agora",
+"c.stillsTitle":"STILLS · FOTOGRAMAS","c.cuadros":"quadros",
+"c.verObra":"youtube · ver a obra","c.verYt":"ver no youtube",
+"c.corte":"· troca de bobina ·",
+"nopalli.anio":"2025 · videodança documental",
+"nopalli.rol":"Realizador · direção, roteiro & fx",
+"nopalli.progM":"Videodança documental · 02:56 · Realizador · ROTEIRO e FX",
+"nopalli.sin":"O uso do nopal mudou ao longo da história mexicana. Passou de alimento a símbolo nacional num instante. Agora, uma série de novas modificações o levará a lugares inesperados.",
+"nopalli.k1":"título","nopalli.k2":"gênero","nopalli.v2":"Videodança documental","nopalli.k3":"duração","nopalli.k4":"idioma","nopalli.v4":"Espanhol","nopalli.k5":"país","nopalli.v5":"México","nopalli.k6":"local de realização","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa e Cuauhtémoc","nopalli.k7":"realizador","nopalli.k8":"produção","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres e Pedro A. Zaragoza Zarza","nopalli.k9":"roteiro","nopalli.k10":"efeitos especiais","nopalli.k11":"elenco",
+"nopalli.st1":"STILL 01 — foice","nopalli.st2":"STILL 02 — organização","nopalli.st3":"STILL 03 — nopal e tunas",
+"andrea.anio":"2024 · documentário de retrato",
+"andrea.rol":"Roteiro documental, direção & edição",
+"andrea.progM":"Documentário · 20:19 · Roteiro Documental, Direção e Edição",
+"andrea.sin":"Andrea Santos Valdes é formada em Direito pela Faculdade de Direito da UNAM, com menção honrosa. Possui dois mestrados, um na Universidad Iberoamericana (bolsa integral) e outro na Escuela Judicial (tese com menção honrosa). Nascida entre os movimentos sociais do SME e de Ayotzinapa, agora levou sua luta ao Poder Judiciário, especificamente à candidatura a MAGISTRADA no Tribunal de Disciplina Judicial da CDMX. Aqui compartilhamos um pouco de sua vida, aspirações e o porquê de se candidatar a ser julgadora, apesar das muitas contradições sobre a reforma do poder judiciário.",
+"andrea.k1":"gênero","andrea.v1":"Documentário de retrato","andrea.k2":"roteiro documental e direção","andrea.k3":"dir. de fotografia","andrea.k4":"som direto e música original","andrea.k5":"edição",
+"andrea.st1":"STILL 01 — casa","andrea.st2":"STILL 02 — transporte","andrea.st3":"STILL 03 — rua",
+"nicolasjaar.anio":"2024 · sessão de poesia e música experimental",
+"nicolasjaar.rol":"Direção de fotografia & edição de vídeo",
+"nicolasjaar.progM":"Sessão de poesia e música experimental · 1 H · Direção de Fotografia e edição de vídeo",
+"nicolasjaar.sin":"Nesta sessão, o músico e escritor Nicolás Jaar nos acompanha para compartilhar um profundo diálogo sobre as dimensões do silêncio, a violência dos muros e a possibilidade de outros mundos, além de uma poderosa improvisação sonora que nos leva a refletir sobre nosso lugar no mundo, nosso poder de ação e a capacidade de denunciar a brutalidade da modernidade — lembrando que a luta palestina é a luta por uma vida digna.",
+"nicolasjaar.k1":"direção e condução","nicolasjaar.k2":"produção","nicolasjaar.k3":"produção de áudio","nicolasjaar.k4":"direção de fotografia e edição de vídeo","nicolasjaar.k5":"operador de câmera","nicolasjaar.k6":"foto fixa",
+"nicolasjaar.st1":"STILL 01 — improvisação sonora","nicolasjaar.st2":"STILL 02 — diálogo e escuta",
+"s.p1":"<b>Filho da Sarça Ardente e da Pedra Gozadora, irmão da que é poderosa</b>, Pedro A. Zaragoza Zarza (pazz) nasce na Urorbe em <b>9 de novembro de 1991</b>. Simbionte que se diverte com todo o tempo do mundo, escritor da geração de 19, músico autodidata, cantador de penúrias e celebrações.",
+"s.p2":"Navegou entre a ciência, a filosofia e a poesia na <b>FFyL-UNAM</b>, onde também consolidou sua carreira de atuação com a técnica do <b>actor red</b>. Especializou-se em compreender a <span class=\"em\">linguagem da Terra</span>, assim como a múltipla tradução aos diferentes reinos via a Hamsa.",
+"s.p3":"Fundador do <b>sin-ismo, todoísmo</b> ou também chamado <span class=\"em\">todos os ismos</span> em 2014. Roteirista e diretor de cinema pela <b>Escola de Cinema e Fotografia Pohualizcalli</b>. Cinegrafista no programa de poesia e música experimental <b>Silencio en llamas</b>.",
+"s.p4":"Atualmente cursa a graduação em <b>Criação e Pesquisa em Dança</b> no Centro de Investigação Coreográfica do INBAL.",
+"s.redes":"redes","s.contacto":"contato direto","s.correo":"e-mail","l.btn":"Mudar idioma"
+},
+
+/* ── ITALIANO ────────────────────────────────────── */
+it:{
+"nav.danza":"danza","nav.escritura":"scrittura","nav.fotografia":"fotografia","nav.cine":"cinema","nav.semblanza":"profilo",
+"navA.danza":"vai a danza","navA.escritura":"vai a scrittura","navA.fotografia":"vai a fotografia","navA.cine":"vai a cinema","navA.semblanza":"vai a profilo","nav.main":"navigazione principale",
+"d.h1a":" Danzare i tempi","d.h1b":"della <em>Terra</em>.",
+"mq.gozo":"gioia","mq.caer":"cadere","mq.traducir":"tradurre","mq.escuchar":"ascoltare","mq.respirar":"respirare","mq.sostener":"sostenere","mq.turbulencias":"turbolenze","mq.caos":"caos","mq.potencial":"potenziale",
+"d.dabkeDesc":"danza comunitaria che resiste all'occupazione e al genocidio",
+"d.dabkeDir":"regia pazz",
+"d.dabkeInterp":"interpreti: Areli Anais Osornio López, Daniela Cancino Teja, Prisma Carolina Guillen Martínez, Sandra Paola Gaytán Jimenez, Amanda Desiree Ramirez Lopez e Pazz",
+"d.dabkeEnc":"10º Incontro Nazionale di Danza MX",
+"d.dabkeVenue":"Museo d'Arte Moderna CDMX · 2025",
+"d.galHead1":"archivio dabke ✳ 6 fotografie","d.galHead2":"← scorri →",
+"d.galAria":"Dabke — galleria di 6 fotografie","d.galRod":"carosello",
+"d.prev":"Foto precedente","d.next":"Foto successiva",
+"d.bitacora":"diario digitale — tocca ogni frase",
+"d.ph1t":"Impronta corporea","d.ph1x":"Il lavoro fisico è ciò che spatterna o ripatterna gli a priori del corpo.",
+"d.ph2t":"Tipo di avvicinamento fisico o tocco","d.ph2x":"Di pelle: staccare la carne dall'osso e modellare l'osso.",
+"d.ph3t":"Pensare con i piedi","d.ph3x":"Etica al passo e al ritmo del migliore dei mondi flessibili.",
+"d.ph4t":"Coincidenza anatomica","d.ph4x":"L'orecchio coincide esattamente con la cresta iliaca.",
+"d.ph5x":"Il psoas collega tutta la zona lombare e si allena in modo indiretto.",
+"d.ph6t":"Danzastre","d.ph6x":"Far sentire-pensare.",
+"d.runa1":"RUNA Regia Jessica M. Castillo C.<br>Interpreti Rooni - Pazz<br>Jardín Escénico 2026<br>Fotografia Fátima Ramírez Corona",
+"d.runa2":"RUNA Regia Jessica M. Castillo C.<br>Interprete Pazz<br>Jardín Escénico 2026<br>Fotografia Fátima Ramírez Corona",
+"f.title":"FOTOGRAFIA","f.cta":"⟡ CLICCA SULL'IMMAGINE — GALLERIA AMPLIATA ⟡",
+"f.c1":"nube di uccelli regia Mario Mendieta","f.c2":"Samantha Leff e Renata Iberia","f.c3":"Tralalero aerodinamico o Arturo Elías Ayub","f.c4":"ánimas regia Arely Reyes","f.c6":"Pioggia di linfa","f.c7":"Salvador Gallardo o dell'Attuale n. 3",
+"f.close":"chiudi","f.prev":"precedente","f.next":"successiva",
+"c.ldTop":"PAZZ FILMS PRESENTA","c.ldTl":"INIZIO FILM","c.ldSkip":"SALTA ⟶","c.ldAria":"Conto alla rovescia di proiezione",
+"c.hero":"CINEMA","c.heroSub":"produttore & regista",
+"c.progTitle":"PROGRAMMA DI SALA","c.progR":"proiezione continua","c.progNote":"passa il cursore per vedere un fotogramma · clicca per entrare nella scheda",
+"c.ficha":"scheda","c.bobina":"bobina",
+"c.salaVideo":"VIDEO","c.salaCanal":"CANALE YOUTUBE","c.salaOk":"disponibile ora",
+"c.stillsTitle":"STILLS · FOTOGRAMMI","c.cuadros":"fotogrammi",
+"c.verObra":"youtube · guarda l'opera","c.verYt":"guarda su youtube",
+"c.corte":"· cambio di bobina ·",
+"nopalli.anio":"2025 · videodanza documentaria",
+"nopalli.rol":"Realizzatore · regia, sceneggiatura & fx",
+"nopalli.progM":"Videodanza documentaria · 02:56 · Realizzatore · SCENEGGIATURA e FX",
+"nopalli.sin":"L'uso del nopal è cambiato nel corso della storia messicana. Da alimento è diventato in un istante simbolo nazionale. Ora, una serie di nuove modifiche lo porterà in luoghi inaspettati.",
+"nopalli.k1":"titolo","nopalli.k2":"genere","nopalli.v2":"Videodanza documentaria","nopalli.k3":"durata","nopalli.k4":"lingua","nopalli.v4":"Spagnolo","nopalli.k5":"paese","nopalli.v5":"Messico","nopalli.k6":"luogo di realizzazione","nopalli.v6":"Milpa Alta, Coacalco, Iztapalapa e Cuauhtémoc","nopalli.k7":"realizzatore","nopalli.k8":"produzione","nopalli.v8":"Pedro P. Zaragoza García, Leticia Zarza Torres e Pedro A. Zaragoza Zarza","nopalli.k9":"sceneggiatura","nopalli.k10":"effetti speciali","nopalli.k11":"cast",
+"nopalli.st1":"STILL 01 — falce","nopalli.st2":"STILL 02 — organizzazione","nopalli.st3":"STILL 03 — nopal e fichi d'india",
+"andrea.anio":"2024 · documentario di ritratto",
+"andrea.rol":"Sceneggiatura documentaria, regia & montaggio",
+"andrea.progM":"Documentario · 20:19 · Sceneggiatura Documentaria, Regia e Montaggio",
+"andrea.sin":"Andrea Santos Valdes è laureata in Giurisprudenza presso la Facoltà di Giurisprudenza dell'UNAM con lode. Ha due master, uno all'Universidad Iberoamericana (borsa di studio completa) e l'altro alla Escuela Judicial (tesi con lode). Nata tra i movimenti sociali della SME e di Ayotzinapa, ora ha spostato la sua lotta nel potere giudiziario, precisamente nella candidatura a MAGISTRATA presso il Tribunale di Disciplina Giudiziaria della CDMX. Qui condividiamo un po' della sua vita, delle sue aspirazioni e del perché si è candidata a diventare giudice, nonostante le molte contraddizioni sulla riforma della giustizia.",
+"andrea.k1":"genere","andrea.v1":"Documentario di ritratto","andrea.k2":"sceneggiatura documentaria e regia","andrea.k3":"dir. della fotografia","andrea.k4":"presa diretta e musica originale","andrea.k5":"montaggio",
+"andrea.st1":"STILL 01 — casa","andrea.st2":"STILL 02 — trasporto","andrea.st3":"STILL 03 — strada",
+"nicolasjaar.anio":"2024 · sessione di poesia e musica sperimentale",
+"nicolasjaar.rol":"Direzione della fotografia & montaggio video",
+"nicolasjaar.progM":"Sessione di poesia e musica sperimentale · 1 H · Direzione della Fotografia e montaggio video",
+"nicolasjaar.sin":"In questa sessione ci accompagna il musicista e scrittore Nicolás Jaar per condividere un dialogo profondo sulle dimensioni del silenzio, la violenza dei muri e la possibilità di altri mondi, oltre a una potente improvvisazione sonora che ci porta a riflettere sul nostro posto nel mondo, sul nostro potere d'azione e sulla capacità di denunciare la brutalità della modernità — ricordandoci che la lotta palestinese è la lotta per una vita degna.",
+"nicolasjaar.k1":"regia e conduzione","nicolasjaar.k2":"produzione","nicolasjaar.k3":"produzione audio","nicolasjaar.k4":"direzione della fotografia e montaggio video","nicolasjaar.k5":"operatore di ripresa","nicolasjaar.k6":"foto di scena",
+"nicolasjaar.st1":"STILL 01 — improvvisazione sonora","nicolasjaar.st2":"STILL 02 — dialogo e ascolto",
+"s.p1":"<b>Figlio del Roveto ardente e della Pietra godente, fratello di colei che è potente</b>, Pedro A. Zaragoza Zarza (pazz) nasce nell'Urorbe il <b>9 novembre 1991</b>. Simbionte che si diverte con tutto il tempo del mondo, scrittore della generazione del 19, musicista autodidatta, cantore di pene e celebrazioni.",
+"s.p2":"Ha navigato tra scienza, filosofia e poesia nella <b>FFyL-UNAM</b>, dove ha anche consolidato la sua carriera di attore con la tecnica dell'<b>actor red</b>. Si è specializzato nel comprendere il <span class=\"em\">linguaggio della Terra</span>, così come la molteplice traduzione ai diversi regni tramite la Hamsa.",
+"s.p3":"Fondatore del <b>sin-ismo, todo-ismo</b> detto anche <span class=\"em\">tutti gli ismi</span> nel 2014. Sceneggiatore e regista cinematografico presso la <b>Scuola di Cinema e Fotografia Pohualizcalli</b>. Direttore della fotografia nel programma di poesia e musica sperimentale <b>Silencio en llamas</b>.",
+"s.p4":"Attualmente studia la laurea in <b>Creazione e Ricerca Coreutica</b> presso il Centro di Ricerca Coreografica dell'INBAL.",
+"s.redes":"social","s.contacto":"contatto diretto","s.correo":"email","l.btn":"Cambia lingua"
+}
+};
+
+var ORIGVAL={"l.btn":"Cambiar idioma"};
+var cur="es";
+function $a(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+
+$a("[data-i18n]").forEach(function(el){
+  var k=el.getAttribute("data-i18n");
+  if(!(k in ORIGVAL))ORIGVAL[k]=el.textContent;
+});
+$a("[data-i18n-html]").forEach(function(el){
+  var k=el.getAttribute("data-i18n-html");
+  if(!(k in ORIGVAL))ORIGVAL[k]=el.innerHTML;
+});
+$a("[data-i18n-attr]").forEach(function(el){
+  el.getAttribute("data-i18n-attr").split("|").forEach(function(pair){
+    var p=pair.split(":");if(p.length!==2)return;
+    if(!(p[1] in ORIGVAL))ORIGVAL[p[1]]=el.getAttribute(p[0])||"";
+  });
+});
+
+function tr(k){
+  if(cur==="es")return ORIGVAL[k];
+  var d=DICT[cur];
+  return (d&&k in d&&d[k]!=="")?d[k]:ORIGVAL[k];
+}
+function trTpl(name,tokens){
+  var s=(TPL[cur]&&TPL[cur][name])||TPL.es[name];
+  for(var t in tokens)s=s.split("{"+t+"}").join(tokens[t]);
+  return s;
+}
+window.__pazzTR=tr;
+
+var NAVKEY={danza:"nav.danza",kaleido:"nav.escritura",foto:"nav.fotografia",cine:"nav.cine",sem:"nav.semblanza"};
+var NAVES={danza:"danza",kaleido:"escritura",foto:"fotografía",cine:"cine",sem:"semblanza"};
+function updateTitle(){
+  var p=window.__pazzActive||"danza";
+  var lbl=(cur==="es")?NAVES[p]:tr(NAVKEY[p]);
+  document.title="pazz — "+lbl;
+}
+window.__pazzTitle=updateTitle;
+window.__pazzNavLbl=function(p){return (cur==="es")?NAVES[p]:tr(NAVKEY[p]);};
+
+function apply(lang){
+  var ok=LANGS.some(function(l){return l[0]===lang;});
+  cur=ok?lang:"es";
+  try{localStorage.setItem("pazz-lang",cur);}catch(e){}
+  document.documentElement.lang=cur;
+  document.documentElement.dir=(cur==="ar"||cur==="fa")?"rtl":"ltr";
+  $a("[data-i18n]").forEach(function(el){
+    var v=tr(el.getAttribute("data-i18n"));
+    el.textContent=v;
+    if(el.hasAttribute("data-text"))el.setAttribute("data-text",v);
+    if("txt" in el.dataset)el.dataset.txt=v;
+  });
+  $a("[data-i18n-html]").forEach(function(el){
+    el.innerHTML=tr(el.getAttribute("data-i18n-html"));
+  });
+  $a("[data-i18n-attr]").forEach(function(el){
+    el.getAttribute("data-i18n-attr").split("|").forEach(function(pair){
+      var p=pair.split(":");if(p.length!==2)return;
+      el.setAttribute(p[0],tr(p[1]));
+    });
+  });
+  $a("[data-i18n-label]").forEach(function(el){
+    el.setAttribute("aria-label",trTpl("dot",{n:el.dataset.n||""}));
+  });
+  $a("[data-i18n-alt]").forEach(function(el){
+    el.alt=tr(el.getAttribute("data-i18n-alt"));
+  });
+  $a(".yt-card").forEach(function(c){
+    c.setAttribute("aria-label",trTpl("verEn",{t:c.dataset.t||""}));
+  });
+  $a(".yt-frame img").forEach(function(im){
+    im.alt=trTpl("fotograma",{t:im.dataset.t||""});
+  });
+  $a(".st-frame img").forEach(function(im){
+    im.alt=(im.dataset.t||"")+" — "+tr(im.dataset.capkey);
+  });
+  updateLangUI();
+  updateTitle();
+  if(window.__fotoLang)window.__fotoLang();
+}
+
+var langBox=document.getElementById("langBox"),
+    langBtn=document.getElementById("langBtn"),
+    langMenu=document.getElementById("langMenu"),
+    langCur=document.getElementById("langCur");
+
+LANGS.forEach(function(L){
+  var b=document.createElement("button");
+  b.type="button";b.className="lg";b.dataset.lang=L[0];b.setAttribute("role","option");
+  var s1=document.createElement("span");s1.textContent=L[1];
+  var s2=document.createElement("span");s2.className="lc";s2.textContent=L[2];
+  b.appendChild(s1);b.appendChild(s2);
+  b.addEventListener("click",function(){apply(L[0]);langBox.classList.remove("open");});
+  langMenu.appendChild(b);
+});
+
+function updateLangUI(){
+  var L=null;
+  LANGS.forEach(function(l){if(l[0]===cur)L=l;});
+  if(!L)L=LANGS[0];
+  langCur.textContent=L[2];
+  langBtn.setAttribute("aria-label",tr("l.btn")+" · "+L[1]);
+  $a("#langMenu .lg").forEach(function(b){
+    var on=b.dataset.lang===cur;
+    b.classList.toggle("on",on);
+    b.setAttribute("aria-selected",on?"true":"false");
+  });
+}
+
+langBtn.addEventListener("click",function(e){
+  e.stopPropagation();
+  langBox.classList.toggle("open");
+});
+document.addEventListener("click",function(e){
+  if(langBox&&!langBox.contains(e.target))langBox.classList.remove("open");
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape")langBox.classList.remove("open");
+});
+
+var saved=null;
+try{saved=localStorage.getItem("pazz-lang");}catch(e){}
+apply(saved||"es");
+})();
+</script>
 </body>
 </html>
+```
