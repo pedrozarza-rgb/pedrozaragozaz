@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>pazz — danza</title>
+<title>pazz — inicio</title>
 <meta name="theme-color" content="#000000">
 <meta name="description" content="pazz · danza, escritura, fotografía, cine y semblanza — un solo sitio, cinco estaciones.">
 
@@ -14,7 +14,7 @@
 <script>
 
 (function(){
-  var VERSION='v2025-06-14-2';
+  var VERSION='v2025-06-14-3';
   try{
     if('serviceWorker' in navigator){
       navigator.serviceWorker.getRegistrations().then(function(regs){
@@ -65,7 +65,7 @@ a{color:inherit}
 .page{position:fixed;inset:0;overflow:hidden;opacity:0;visibility:hidden;
   transition:opacity .3s ease,visibility 0s linear .3s}
 .page.on{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s}
-.pg-danza,.pg-foto,.pg-cine,.pg-sem{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+.pg-danza,.pg-foto,.pg-cine,.pg-sem,.pg-inicio{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
   -webkit-overflow-scrolling:touch}
 
 /* ──────────── DOCK SUPERIOR · navegación unificada ──────────── */
@@ -132,6 +132,23 @@ a{color:inherit}
 #chan .bar{width:14px;height:.86em;background:var(--pc,#fff);box-shadow:0 0 24px var(--pc,#fff)}
 #chan.zap{animation:zap .5s ease}
 @keyframes zap{0%{opacity:0;transform:scale(.985)}14%{opacity:1;transform:none}72%{opacity:1}100%{opacity:0}}
+
+/* ──────────── INICIO (typewriter art · papel) ──────────── */
+.pg-inicio{background:#fff;color:#0d0d0d;font-family:'Space Mono',monospace}
+.pg-inicio ::selection{background:#0d0d0d;color:#fff}
+.pg-inicio :focus-visible{outline:2px solid #0d0d0d;outline-offset:3px}
+.pg-inicio .ini-stage{position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:calc(84px + env(safe-area-inset-top)) 24px 72px;overflow:hidden}
+.pg-inicio .ini-glyphs{position:absolute;inset:0;pointer-events:none;user-select:none}
+.pg-inicio .ini-glyphs span{position:absolute;line-height:1}
+.pg-inicio .tw-wrap{position:relative;z-index:2;text-align:center;max-width:92vw}
+.pg-inicio .ini-enter{font:700 clamp(14px,2.6vw,20px) 'Space Mono',monospace;letter-spacing:.3em;
+  text-transform:uppercase;color:#0d0d0d;background:#fff;border:1.5px solid #0d0d0d;padding:22px 46px;
+  transition:background .25s,color .25s,letter-spacing .35s}
+.pg-inicio .ini-enter:hover{background:#0d0d0d;color:#fff;letter-spacing:.4em}
+.pg-inicio .ent-caret{display:inline-block;width:.55em;height:1.05em;background:currentColor;
+  margin-left:.18em;vertical-align:text-bottom;animation:entcaret 1.2s steps(1) infinite}
+@keyframes entcaret{0%,55%{opacity:1}56%,100%{opacity:0}}
 
 /* ──────────── ESCRITURA · kaleidoscopio ──────────── */
 .pg-kaleido{background:#f2f2f2;color:#111;font-family:'Space Mono',monospace}
@@ -522,10 +539,21 @@ body.go .pg-cine .hero-sub span{transform:none}
 </style></noscript>
 </head>
 
-<body class="view-danza">
+<body class="view-inicio">
+
+<!-- ════════════════ PÁGINA · INICIO ════════════════ -->
+<section class="page pg-inicio on" id="page-inicio">
+  <div class="ini-stage">
+    <div class="ini-glyphs" id="iniGlyphs" aria-hidden="true"></div>
+
+    <div class="tw-wrap">
+      <button class="ini-enter" type="button" data-go="danza">[ <span id="twEnter" dir="auto">entrar</span><span class="ent-caret" aria-hidden="true"></span> ]</button>
+    </div>
+  </div>
+</section>
 
 <!-- ════════════════ PÁGINA · DANZA ════════════════ -->
-<section class="page pg-danza on" id="page-danza">
+<section class="page pg-danza" id="page-danza">
   <main class="wrap">
     <h1>
       <span class="ml"><span style="--i:0" data-i18n="d.h1a"> Bailar los tiempos</span></span>
@@ -739,6 +767,7 @@ body.go .pg-cine .hero-sub span{transform:none}
 <!-- ════════════════ DOCK SUPERIOR · navegación unificada + idioma ════════════════ -->
 <nav id="dock" aria-label="navegación principal" data-i18n-attr="aria-label:nav.main">
   <div class="dk-items">
+    <button class="ni" style="--pc:#ececec" data-go="inicio" aria-label="ir a inicio" data-i18n-attr="aria-label:navA.inicio"><span class="n">00</span><span class="lbl" data-i18n="nav.inicio">inicio</span></button>
     <button class="ni" style="--pc:#e8703a" data-go="danza" aria-label="ir a danza" data-i18n-attr="aria-label:navA.danza"><span class="n">01</span><span class="lbl" data-i18n="nav.danza">danza</span></button>
     <button class="ni" style="--pc:#f2f2f2" data-go="kaleido" aria-label="ir a escritura" data-i18n-attr="aria-label:navA.escritura"><span class="n">02</span><span class="lbl" data-i18n="nav.escritura">escritura</span></button>
     <button class="ni" style="--pc:#c4ff0e" data-go="foto" aria-label="ir a fotografía" data-i18n-attr="aria-label:navA.fotografia"><span class="n">03</span><span class="lbl" data-i18n="nav.fotografia">fotografía</span></button>
@@ -758,24 +787,26 @@ body.go .pg-cine .hero-sub span{transform:none}
 /* ════════════════ ROUTER GLOBAL + DOCK ════════════════ */
 (function(){
 "use strict";
-var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var RM=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var PAGES={
+  inicio:document.getElementById('page-inicio'),
   danza:document.getElementById('page-danza'),
   kaleido:document.getElementById('page-kaleido'),
   foto:document.getElementById('page-foto'),
   cine:document.getElementById('page-cine'),
   sem:document.getElementById('page-sem')
 };
-var ORDER=['danza','kaleido','foto','cine','sem'];
+var ORDER=['inicio','danza','kaleido','foto','cine','sem'];
 var META={
+  inicio:{idx:'00',label:'inicio',hash:'inicio',title:'pazz — inicio'},
   danza:{idx:'01',label:'danza',hash:'danza',title:'pazz — danza'},
   kaleido:{idx:'02',label:'escritura',hash:'escritura',title:'pazz — escritura'},
   foto:{idx:'03',label:'fotografía',hash:'fotografia',title:'pazz — fotografía'},
   cine:{idx:'04',label:'cine',hash:'cine',title:'pazz — cine'},
   sem:{idx:'05',label:'semblanza',hash:'semblanza',title:'pazz — semblanza'}
 };
-window.__pazzActive='danza';
-var ACTIVE='danza',seen={};
+window.__pazzActive='inicio';
+var ACTIVE='inicio',seen={};
 var chan=document.getElementById('chan'),chanName=document.getElementById('chanName'),
     chanNum=document.getElementById('chanNum'),chanBar=document.getElementById('chanBar');
 var NIS=Array.prototype.slice.call(document.querySelectorAll('#dock .ni'));
@@ -797,7 +828,7 @@ function zap(){
 }
 function goTo(name,opts){
   opts=opts||{};
-  if(!PAGES[name])name='danza';
+  if(!PAGES[name])name='inicio';
   if(name===ACTIVE){
     PAGES[name].scrollTop=0;
     if(opts.hash)setHash(name);
@@ -812,6 +843,7 @@ function goTo(name,opts){
   document.body.classList.add('view-'+name);
   if(window.__pazzTitle){window.__pazzTitle();}else{document.title=META[name].title;}
   updateDock();zap();
+  if(name==='inicio'&&window.__inicioEnter){window.__inicioEnter();}
   if(name==='danza'&&!seen.danza){seen.danza=true;if(window.__danzaEnter)window.__danzaEnter();}
   if(name==='cine'&&!seen.cine){seen.cine=true;if(window.__cineStart)window.__cineStart();}
   if(name==='sem'&&!seen.sem){seen.sem=true;if(window.__semEnter)window.__semEnter();}
@@ -823,7 +855,8 @@ function setHash(name){
   var h='#/'+META[name].hash;
   try{ if(location.hash!==h) history.replaceState(null,'',h); }catch(e){}
 }
-var HASHMAP={danza:'danza',escritura:'kaleido',karbhalanotacion:'kaleido',kaleido:'kaleido',
+var HASHMAP={inicio:'inicio',home:'inicio',portada:'inicio',
+  danza:'danza',escritura:'kaleido',karbhalanotacion:'kaleido',kaleido:'kaleido',
   fotografia:'foto',foto:'foto',cine:'cine',semblanza:'sem',sem:'sem'};
 function fromHash(){
   var h=(location.hash||'').replace(/^#\/?/,'').toLowerCase();
@@ -835,12 +868,71 @@ document.addEventListener('click',function(e){
   if(g){e.preventDefault();goTo(g.getAttribute('data-go'),{hash:true});}
 });
 window.addEventListener('hashchange',function(){
-  var n=fromHash();goTo(n||'danza',{hash:false});
+  var n=fromHash();goTo(n||'inicio',{hash:false});
 });
 
 var init=fromHash();
-if(init&&init!=='danza'){goTo(init,{hash:false});}
-else{updateDock();setHash('danza');if(window.__pazzTitle){window.__pazzTitle();}else{document.title=META.danza.title;}}
+if(init&&init!=='inicio'){goTo(init,{hash:false});}
+else{updateDock();setHash('inicio');if(window.__pazzTitle){window.__pazzTitle();}else{document.title=META.inicio.title;}}
+})();
+</script>
+
+<script>
+/* ════════════════ INICIO · typewriter art ════════════════ */
+(function(){
+"use strict";
+try{
+var POOL=["字","地","語","土","永","詩","舞","書","ش","آ","گ","پ","و","چ","ع","ة","ق","ж","я","и","ю","ф","щ","Ω","λ","θ","ψ","π","अ","श","आ","ॐ","あ","ん","の","ñ","é","ø","ç","ę","ה"];
+var field=document.getElementById("iniGlyphs");
+function genGlyphs(){
+  if(!field)return;
+  field.innerHTML="";
+  var n=20+Math.floor(Math.random()*10);
+  for(var i=0;i<n;i++){
+    var s=document.createElement("span");
+    s.textContent=POOL[Math.floor(Math.random()*POOL.length)];
+    s.style.left=(4+Math.random()*89).toFixed(2)+"%";
+    s.style.top=(8+Math.random()*82).toFixed(2)+"%";
+    s.style.fontSize=Math.round(10+Math.random()*20)+"px";
+    s.style.opacity=(0.25+Math.random()*0.6).toFixed(2);
+    s.style.transform="rotate("+Math.round(-10+Math.random()*20)+"deg)";
+    field.appendChild(s);
+  }
+}
+genGlyphs();
+window.__inicioEnter=genGlyphs;
+
+/* ── ENTRAR · máquina de escribir multilingüe · tempo ADAGIO ──
+   tipeo lento → pausa larga → borrado lento → silencio → otra lengua.
+   ciclo perpetuo mientras la página inicio está activa. */
+var ENTER=["entrar","enter","войти","进入","ادخل","ورود","entrer","eintreten","入る","entrare","प्रवेश","είσοδος"];
+var elEnter=document.getElementById("twEnter");
+if(!elEnter)return;
+var ADAGIO={typeMin:240,typeVar:180,hold:3200,erase:120,gap:1200};
+function on(){return window.__pazzActive==="inicio";}
+var wi=0,pos=0;
+function pick(){
+  var n;
+  do{n=Math.floor(Math.random()*ENTER.length);}while(n===wi&&ENTER.length>1);
+  wi=n;
+}
+function typeNext(){
+  if(!on()){setTimeout(typeNext,400);return;}
+  var w=ENTER[wi];
+  pos++;
+  elEnter.textContent=w.slice(0,pos);
+  if(pos>=w.length){setTimeout(eraseAll,ADAGIO.hold);return;}
+  setTimeout(typeNext,ADAGIO.typeMin+Math.random()*ADAGIO.typeVar);
+}
+function eraseAll(){
+  if(!on()){setTimeout(eraseAll,400);return;}
+  var w=ENTER[wi];
+  if(pos>0){pos--;elEnter.textContent=w.slice(0,pos);setTimeout(eraseAll,ADAGIO.erase);return;}
+  pick();
+  setTimeout(typeNext,ADAGIO.gap);
+}
+setTimeout(typeNext,900);
+}catch(err){}
 })();
 </script>
 
@@ -848,11 +940,15 @@ else{updateDock();setHash('danza');if(window.__pazzTitle){window.__pazzTitle();}
 /* ════════════════ DANZA · página ════════════════ */
 (function(){
 "use strict";
-var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var danzaPage=document.getElementById('page-danza');
 
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.pg-danza .rv').forEach(function(el){io.observe(el)});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.pg-danza .rv').forEach(function(el){io.observe(el)});
+}else{
+  document.querySelectorAll('.pg-danza .rv').forEach(function(el){el.classList.add('on')});
+}
 
 var danzaEntered=false;
 window.__danzaEnter=function(){
@@ -879,7 +975,7 @@ var counter=document.getElementById('dabkeCount');
 var dots=Array.prototype.slice.call(document.querySelectorAll('#dabkeDots button'));
 var total=track.children.length;
 var idx=0;
-var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(reduced){track.style.transition='none';}
 
 function pad(n){return (n<10?'0':'')+n;}
@@ -1021,7 +1117,7 @@ requestAnimationFrame(loop);
 /* ════════════════ FOTOGRAFÍA · galería + lightbox + cursor ════════════════ */
 (function(){
 "use strict";
-const FOTO=[
+var FOTO=[
   { u:"img/foto/foto-01.jpg", c:"nube de pájaros dir. Mario Mendieta" },
   { u:"img/foto/foto-02.jpg", c:"Samantha Leff y Renata Iberia" },
   { u:"img/foto/foto-03.jpg", c:"Tralalero aerodinámico o Arturo Elías Ayub" },
@@ -1031,39 +1127,39 @@ const FOTO=[
   { u:"img/foto/foto-07.jpg", c:"Salvador Gallardo o del Actual no. 3" }
 ];
 
-const fotoList=document.getElementById("fotoList");
-const cursor=document.getElementById("cursor");
-const fotoPage=document.getElementById("page-foto");
+var fotoList=document.getElementById("fotoList");
+var cursor=document.getElementById("cursor");
+var fotoPage=document.getElementById("page-foto");
 
 function cursorHoverOn(c){if(window.__pazzActive==='foto')cursor.classList.add(c);}
 function cursorHoverOff(c){cursor.classList.remove(c);}
 
-FOTO.forEach((f,i)=>{
-  const k='f.c'+(i+1);
-  const fig=document.createElement("figure");
+FOTO.forEach(function(f,i){
+  var k='f.c'+(i+1);
+  var fig=document.createElement("figure");
   fig.className="foto-item";
-  fig.innerHTML=`<img src="${f.u}" alt="${f.c}" loading="lazy" data-i18n-alt="${k}"><span class="cap" data-i18n="${k}">${f.c}</span>`;
-  fig.addEventListener("click",()=>openLightbox(i));
-  fig.addEventListener("mouseenter",()=>cursorHoverOn("hover-img"));
-  fig.addEventListener("mouseleave",()=>cursorHoverOff("hover-img"));
+  fig.innerHTML='<img src="'+f.u+'" alt="'+f.c+'" loading="lazy" data-i18n-alt="'+k+'"><span class="cap" data-i18n="'+k+'">'+f.c+'</span>';
+  fig.addEventListener("click",function(){openLightbox(i);});
+  fig.addEventListener("mouseenter",function(){cursorHoverOn("hover-img");});
+  fig.addEventListener("mouseleave",function(){cursorHoverOff("hover-img");});
   fotoList.appendChild(fig);
 });
 
-let currentIndex=0;
-const lb=document.getElementById("lb");
-const lbImg=document.getElementById("lbImg");
-const lbCap=document.getElementById("lbCap");
+var currentIndex=0;
+var lb=document.getElementById("lb");
+var lbImg=document.getElementById("lbImg");
+var lbCap=document.getElementById("lbCap");
 
 function capFor(i){
-  const k='f.c'+(i+1);
-  const v=(window.__pazzTR?window.__pazzTR(k):null);
+  var k='f.c'+(i+1);
+  var v=(window.__pazzTR?window.__pazzTR(k):null);
   return v||FOTO[i].c;
 }
 function openLightbox(index){currentIndex=index;renderLightbox();lb.classList.add("on");}
 function renderLightbox(){
-  const item=FOTO[currentIndex];
+  var item=FOTO[currentIndex];
   lbImg.src=item.u;lbImg.alt=capFor(currentIndex);
-  lbCap.textContent=`${capFor(currentIndex)}  [${currentIndex+1}/${FOTO.length}]`;
+  lbCap.textContent=capFor(currentIndex)+'  ['+(currentIndex+1)+'/'+FOTO.length+']';
 }
 window.__fotoLang=function(){ if(lb.classList.contains('on')) renderLightbox(); };
 function closeLightbox(){lb.classList.remove("on");}
@@ -1074,32 +1170,32 @@ document.getElementById("lbClose").addEventListener("click",closeLightbox);
 document.getElementById("lbNext").addEventListener("click",nextImage);
 document.getElementById("lbPrev").addEventListener("click",prevImage);
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown",function(e){
   if(!lb.classList.contains("on"))return;
   if(e.key==="Escape")closeLightbox();
   if(e.key==="ArrowRight")nextImage();
   if(e.key==="ArrowLeft")prevImage();
 });
-lb.addEventListener("click",(e)=>{if(e.target===lb)closeLightbox();});
+lb.addEventListener("click",function(e){if(e.target===lb)closeLightbox();});
 
-let swipeX=null;
-lb.addEventListener("touchstart",(e)=>{swipeX=e.touches[0].clientX;},{passive:true});
-lb.addEventListener("touchend",(e)=>{
+var swipeX=null;
+lb.addEventListener("touchstart",function(e){swipeX=e.touches[0].clientX;},{passive:true});
+lb.addEventListener("touchend",function(e){
   if(swipeX===null)return;
-  const dx=e.changedTouches[0].clientX-swipeX;
+  var dx=e.changedTouches[0].clientX-swipeX;
   swipeX=null;
   if(Math.abs(dx)>40){dx<0?nextImage():prevImage();}
 },{passive:true});
 
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener("mousemove",function(e){
   cursor.style.left=e.clientX+"px";
   cursor.style.top=e.clientY+"px";
 });
-document.querySelectorAll(".pg-foto .lb-btn").forEach(el=>{
-  el.addEventListener("mouseenter",()=>cursorHoverOn("hover-btn"));
-  el.addEventListener("mouseleave",()=>cursorHoverOff("hover-btn"));
+document.querySelectorAll(".pg-foto .lb-btn").forEach(function(el){
+  el.addEventListener("mouseenter",function(){cursorHoverOn("hover-btn");});
+  el.addEventListener("mouseleave",function(){cursorHoverOff("hover-btn");});
 });
-fotoPage.addEventListener("mouseleave",()=>{cursorHoverOff("hover-img");cursorHoverOff("hover-btn");});
+fotoPage.addEventListener("mouseleave",function(){cursorHoverOff("hover-img");cursorHoverOff("hover-btn");});
 })();
 </script>
 
@@ -1109,7 +1205,7 @@ fotoPage.addEventListener("mouseleave",()=>{cursorHoverOff("hover-img");cursorHo
 "use strict";
 try{
 
-var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var RM=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var HAS_IO=("IntersectionObserver" in window);
 function $q(s,c){return (c||document).querySelector(s)}
 function $$q(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
@@ -1367,7 +1463,7 @@ var cv=document.getElementById('embersCanvas'),cx=cv.getContext('2d');
 var W=0,H=0,ps=[],mx=-999,my=-999,sparks=[];
 var COLS=["#ff7a3c","#ffd166","#FF6EC7","#f2e9df"];
 
-function size(){W=cv.width=cv.clientWidth||window.innerHeight;H=cv.height=cv.clientHeight||window.innerHeight;
+function size(){W=cv.width=cv.clientWidth||window.innerWidth;H=cv.height=cv.clientHeight||window.innerHeight;
   var n=Math.min(120,Math.max(40,Math.floor(W/12)));
   while(ps.length<n)ps.push(mkEmber(true));
   ps.length=n;
@@ -1427,14 +1523,14 @@ function loop(t){
 }
 requestAnimationFrame(loop);
 
-var io=new IntersectionObserver(function(es){es.forEach(function(e){
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}
-})},{threshold:.12});
-document.querySelectorAll('.pg-sem .rv').forEach(function(el){io.observe(el)});
+})},{threshold:.12}):null;
+document.querySelectorAll('.pg-sem .rv').forEach(function(el){ if(io){io.observe(el);}else{el.classList.add('on');} });
 
 function scramble(el,chars){
   var txt=el.dataset.txt||el.textContent.trim();el.dataset.txt=txt;
-  var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(RM){el.textContent=txt;return;}
   chars=chars||'▓▒░#*+·×ZARPAZ19ISMO';
   var f=0,total=Math.max(18,Math.round(txt.length*1.6));
@@ -1488,6 +1584,7 @@ var DICT={
 
 /* ── РУССКИЙ ─────────────────────────────────────── */
 ru:{
+"nav.inicio":"начало","navA.inicio":"перейти к началу",
 "nav.danza":"танец","nav.escritura":"письмо","nav.fotografia":"фотография","nav.cine":"кино","nav.semblanza":"биография",
 "navA.danza":"перейти к танцу","navA.escritura":"перейти к письму","navA.fotografia":"перейти к фотографии","navA.cine":"перейти к кино","navA.semblanza":"перейти к биографии","nav.main":"основная навигация",
 "d.h1a":" Танцевать времена","d.h1b":"<em>Земли</em>.",
@@ -1547,6 +1644,7 @@ ru:{
 
 /* ── ENGLISH ─────────────────────────────────────── */
 en:{
+"nav.inicio":"home","navA.inicio":"go to home",
 "nav.danza":"dance","nav.escritura":"writing","nav.fotografia":"photography","nav.cine":"film","nav.semblanza":"bio",
 "navA.danza":"go to dance","navA.escritura":"go to writing","navA.fotografia":"go to photography","navA.cine":"go to film","navA.semblanza":"go to bio","nav.main":"main navigation",
 "d.h1a":" Dancing the times","d.h1b":"of <em>Earth</em>.",
@@ -1606,6 +1704,7 @@ en:{
 
 /* ── 中文 ────────────────────────────────────────── */
 zh:{
+"nav.inicio":"首页","navA.inicio":"前往首页",
 "nav.danza":"舞蹈","nav.escritura":"写作","nav.fotografia":"摄影","nav.cine":"电影","nav.semblanza":"简介",
 "navA.danza":"前往舞蹈","navA.escritura":"前往写作","navA.fotografia":"前往摄影","navA.cine":"前往电影","navA.semblanza":"前往简介","nav.main":"主导航",
 "d.h1a":"舞动时光","d.h1b":"属于<em>大地</em>。",
@@ -1665,6 +1764,7 @@ zh:{
 
 /* ── العربية ─────────────────────────────────────── */
 ar:{
+"nav.inicio":"البداية","navA.inicio":"الانتقال إلى البداية",
 "nav.danza":"الرقص","nav.escritura":"الكتابة","nav.fotografia":"التصوير","nav.cine":"السينما","nav.semblanza":"السيرة",
 "navA.danza":"الانتقال إلى الرقص","navA.escritura":"الانتقال إلى الكتابة","navA.fotografia":"الانتقال إلى التصوير","navA.cine":"الانتقال إلى السينما","navA.semblanza":"الانتقال إلى السيرة","nav.main":"التنقل الرئيسي",
 "d.h1a":" أن نرقص أزمنة","d.h1b":"<em>الأرض</em>.",
@@ -1724,6 +1824,7 @@ ar:{
 
 /* ── فارسی ───────────────────────────────────────── */
 fa:{
+"nav.inicio":"آغاز","navA.inicio":"رفتن به آغاز",
 "nav.danza":"رقص","nav.escritura":"نوشتار","nav.fotografia":"عکاسی","nav.cine":"سینما","nav.semblanza":"شرح حال",
 "navA.danza":"رفتن به رقص","navA.escritura":"رفتن به نوشتار","navA.fotografia":"رفتن به عکاسی","navA.cine":"رفتن به سینما","navA.semblanza":"رفتن به شرح حال","nav.main":"ناوبری اصلی",
 "d.h1a":" رقصیدنِ زمانه‌ها","d.h1b":"از <em>زمین</em>.",
@@ -1774,7 +1875,7 @@ fa:{
 "nicolasjaar.sin":"در این نشست، موسیقی‌دان و نویسنده نیکلاس جار همراه ما می‌شود تا گفت‌وگویی عمیق درباره ابعاد سکوت، خشونت دیوارها و امکانِ جهان‌های دیگر داشته باشیم، به‌همراه یک بداهه صوتی قدرتمند که ما را به اندیشیدن درباره جایگاه‌مان در جهان، قدرت عمل‌مان و توانایی افشای خشونت مدرنیته وامی‌دارد — و یادآوری می‌کند که مبارزه فلسطین، مبارزه برای زندگی شایسته است.",
 "nicolasjaar.k1":"کارگردانی و اجرا","nicolasjaar.k2":"تهیه‌کنندگی","nicolasjaar.k3":"تهیه صدا","nicolasjaar.k4":"مدیریت فیلم‌برداری و تدوین ویدیو","nicolasjaar.k5":"فیلم‌بردار","nicolasjaar.k6":"عکاسی ثابت",
 "nicolasjaar.st1":"STILL 01 — بداهه صوتی","nicolasjaar.st2":"STILL 02 — گفت‌وگو و شنیدن",
-"s.p1":"<b>فرزند بوته سوزان و سنگ شادمان، برادرِ آن که تواناست</b>، پدرو آ. ساراگوسا سارسا (pazz) در <b>۹ نوامبر ۱۹۹۱</b> در اوروربه زاده می‌شود. همزیستی که با زمانِ جهان سرگرم است، نویسنده نسل ۱۹، موسیقی‌دان خودآموخته، خواننده سختی‌ها و جشن‌ها.",
+"s.p1":"<b>فرزند بوته سوزان و سنگ شادمان، برادرِ آن که تواناست</b>، پدرو آ. ساراگوسا سارسا (pazz) در <b>۹ نوامبر ۱۹۹</b> در اوروربه زاده می‌شود. همزیستی که با زمانِ جهان سرگرم است، نویسنده نسل ۱۹، موسیقی‌دان خودآموخته، خواننده سختی‌ها و جشن‌ها.",
 "s.p2":"در <b>FFyL-UNAM</b> میان علم، فلسفه و شعر کشتی‌رانی کرد و همان‌جا حرفه بازیگری‌اش را با تکنیک <b>actor red</b> استوار ساخت. در فهم <span class=\"em\">زبان زمین</span> و نیز ترجمه چندگانه به قلمروهای گوناگون از راه خمسه تخصص یافت.",
 "s.p3":"بنیان‌گذار <b>بی‌ایسمی، همه‌ایسمی</b> یا به‌قولی <span class=\"em\">همه ایسم‌ها</span> در سال ۲۰۱۴. فیلم‌نامه‌نویس و کارگردان سینما از <b>مدرسه سینما و عکاسی Pohualizcalli</b>. فیلم‌بردار برنامه شعر و موسیقی تجربی <b>Silencio en llamas</b>.",
 "s.p4":"اکنون در مقطع کارشناسی <b>آفرینش و پژوهش رقص</b> در مرکز پژوهش‌های کورئوگرافیک INBAL تحصیل می‌کند.",
@@ -1783,6 +1884,7 @@ fa:{
 
 /* ── FRANÇAIS ────────────────────────────────────── */
 fr:{
+"nav.inicio":"accueil","navA.inicio":"aller à l'accueil",
 "nav.danza":"danse","nav.escritura":"écriture","nav.fotografia":"photographie","nav.cine":"cinéma","nav.semblanza":"profil",
 "navA.danza":"aller à danse","navA.escritura":"aller à écriture","navA.fotografia":"aller à photographie","navA.cine":"aller à cinéma","navA.semblanza":"aller à profil","nav.main":"navigation principale",
 "d.h1a":" Danser les temps","d.h1b":"de la <em>Terre</em>.",
@@ -1842,6 +1944,7 @@ fr:{
 
 /* ── DEUTSCH ─────────────────────────────────────── */
 de:{
+"nav.inicio":"start","navA.inicio":"zum start",
 "nav.danza":"Tanz","nav.escritura":"Schrift","nav.fotografia":"Fotografie","nav.cine":"Film","nav.semblanza":"Profil",
 "navA.danza":"zu Tanz","navA.escritura":"zu Schrift","navA.fotografia":"zu Fotografie","navA.cine":"zu Film","navA.semblanza":"zu Profil","nav.main":"Hauptnavigation",
 "d.h1a":" Die Zeiten tanzen","d.h1b":"der <em>Erde</em>.",
@@ -1901,6 +2004,7 @@ de:{
 
 /* ── 日本語 ──────────────────────────────────────── */
 ja:{
+"nav.inicio":"ホーム","navA.inicio":"ホームへ",
 "nav.danza":"ダンス","nav.escritura":"文章","nav.fotografia":"写真","nav.cine":"映画","nav.semblanza":"略歴",
 "navA.danza":"ダンスへ","navA.escritura":"文章へ","navA.fotografia":"写真へ","navA.cine":"映画へ","navA.semblanza":"略歴へ","nav.main":"メインナビゲーション",
 "d.h1a":"踊る、","d.h1b":"<em>大地</em>の時を。",
@@ -1960,6 +2064,7 @@ ja:{
 
 /* ── PORTUGUÊS ───────────────────────────────────── */
 pt:{
+"nav.inicio":"início","navA.inicio":"ir para o início",
 "nav.danza":"dança","nav.escritura":"escrita","nav.fotografia":"fotografia","nav.cine":"cinema","nav.semblanza":"perfil",
 "navA.danza":"ir para dança","navA.escritura":"ir para escrita","navA.fotografia":"ir para fotografia","navA.cine":"ir para cinema","navA.semblanza":"ir para perfil","nav.main":"navegação principal",
 "d.h1a":" Dançar os tempos","d.h1b":"da <em>Terra</em>.",
@@ -2018,6 +2123,7 @@ pt:{
 
 /* ── ITALIANO ────────────────────────────────────── */
 it:{
+"nav.inicio":"inizio","navA.inicio":"vai a inizio",
 "nav.danza":"danza","nav.escritura":"scrittura","nav.fotografia":"fotografia","nav.cine":"cinema","nav.semblanza":"profilo",
 "navA.danza":"vai a danza","navA.escritura":"vai a scrittura","navA.fotografia":"vai a fotografia","navA.cine":"vai a cinema","navA.semblanza":"vai a profilo","nav.main":"navigazione principale",
 "d.h1a":" Danzare i tempi","d.h1b":"della <em>Terra</em>.",
@@ -2107,10 +2213,10 @@ function trTpl(name,tokens){
 }
 window.__pazzTR=tr;
 
-var NAVKEY={danza:"nav.danza",kaleido:"nav.escritura",foto:"nav.fotografia",cine:"nav.cine",sem:"nav.semblanza"};
-var NAVES={danza:"danza",kaleido:"escritura",foto:"fotografía",cine:"cine",sem:"semblanza"};
+var NAVKEY={inicio:"nav.inicio",danza:"nav.danza",kaleido:"nav.escritura",foto:"nav.fotografia",cine:"nav.cine",sem:"nav.semblanza"};
+var NAVES={inicio:"inicio",danza:"danza",kaleido:"escritura",foto:"fotografía",cine:"cine",sem:"semblanza"};
 function updateTitle(){
-  var p=window.__pazzActive||"danza";
+  var p=window.__pazzActive||"inicio";
   var lbl=(cur==="es")?NAVES[p]:tr(NAVKEY[p]);
   document.title="pazz — "+lbl;
 }
